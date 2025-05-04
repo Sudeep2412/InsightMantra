@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparative Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #444;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+            margin-top: 1rem;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Comparative Analysis</h2>
+        <label for="analysis-type">Select Analysis Type:</label>
+        <select id="analysis-type" onchange="fetchAnalysis()">
+            <option value="brand_market_share">Brand-wise Market Share</option>
+            <option value="product_sales">Product-wise Sales Performance</option>
+            <option value="search_popularity">Search Popularity Trends</option>
+            <option value="review_sentiment">Review Sentiment Analysis</option>
+            <option value="price_vs_rating">Price vs Rating Comparison</option>
+        </select>
+        <canvas id="analysisChart"></canvas>
+    </div>
+    <div class="footer">
+        © 2025 InsightMantra
+    </div>
+    <script>
+        async function fetchAnalysis() {
+            const analysisType = document.getElementById('analysis-type').value;
+            
+            // ✅ Log the selected type for debugging
+            console.log("Selected analysis type:", analysisType);
+
+            try {
+                const response = await axios.get(`/api/analysis/${analysisType}`);
+                const data = response.data;
+
+                // Update chart with new data
+                updateChart(data.labels, data.values, data.chartTitle);
+            } catch (error) {
+                console.error("Error fetching analysis data:", error.response?.data || error.message);
+
+                document.querySelector('.container').innerHTML += `
+                    <div style="color: red; text-align: center; margin-top: 1rem;">
+                        Failed to fetch data. Please check your selection or try again later.
+                    </div>
+                `;
+            }
+        }
+
+
+
+        let chart;
+        function updateChart(labels, values, title) {
+            const ctx = document.getElementById('analysisChart').getContext('2d');
+            if (chart) {
+                chart.destroy();
+            }
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: title,
+                        data: values,
+                        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: title,
+                            font: {
+                                size: 16
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Categories'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Value'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        fetchAnalysis();
+    </script>
+</body>
+</html>

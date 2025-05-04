@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/login.css') }}" />
+</head>
+<body>
+
+
+	<div class="form-container sign-in-container">
+		<form method="POST">
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					<ul class="flashes">
+						{% for category, message in messages %}
+							<li class="{{ category }}">{{ message }}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+			<h1>Register</h1>
+			{{ form.name(placeholder="Full Name") }}
+			{{ form.email_address(placeholder="Email Address") }}
+			{{ form.password1(placeholder="Password") }}
+			{{ form.password2(placeholder="Confirm Password") }}
+	
+			<button>Register</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+			<div class="overlay-panel overlay-right">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signUp"><a  href="{{ url_for('login_page') }}">Log in</button></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Created with <i class="fa fa-heart"></i> by
+		<a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+		- Read how I created this and how you can join the challenge
+		<a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+	</p>
+	<script>const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});</script>
+</footer>
+
+

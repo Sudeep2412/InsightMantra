@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Styles/graph.css') }}" />
+</head>
+<body>
+    <div class="grid-container">
+        
+        <main class="main-container">
+            <div class="graph-container">
+                <iframe src="https://data.worldbank.org/share/widget?indicators=FP.CPI.TOTL.ZG&locations=IN&skipRedirection=true" class="graph-iframe"></iframe>
+            </div>
+            <br><br>
+            <div class="graph-container1">
+                <iframe src="https://data.worldbank.org/share/widget?indicators=FP.CPI.TOTL&locations=IN&skipRedirection=true" class="graph-iframe"></iframe>
+            </div>
+            <br><br>
+            <div class="graph-container2">
+                <iframe src="https://data.worldbank.org/share/widget?indicators=SL.EMP.TOTL.SP.ZS&locations=IN&skipRedirection=true" class="graph-iframe"></iframe>
+            </div>
+        </main>
+    </div>
+    <div class="ranad">
+    <canvas id="forecastChart" width="800" height="400"></canvas>
+    <script>
+        async function createChart() {
+            const response = await fetch('../chart_data.json');
+            const data = await response.json();
+
+            const ctx = document.querySelector('#forecastChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Actual',
+                        data: data.ds.map((d, i) => ({x: new Date(d), y: data.y[i]})),
+                        pointRadius: 2,
+                        backgroundColor: 'black',
+                        borderColor: 'black',
+                        pointStyle: 'circle',
+                        showLine: false,
+                    }, {
+                        label: 'Forecast',
+                        data: data.forecast_ds.map((d, i) => ({x: new Date(d), y: data.yhat[i]})),
+                        borderColor: '#1f77b4',
+                        backgroundColor: 'rgba(31, 119, 180, 0.2)',
+                        fill: false,
+                        pointRadius: 0,
+                    }, {
+                        label: 'Upper Bound',
+                        data: data.forecast_ds.map((d, i) => ({x: new Date(d), y: data.yhat_upper[i]})),
+                        borderColor: 'rgba(31, 119, 180, 0.2)',
+                        backgroundColor: 'rgba(31, 119, 180, 0.2)',
+                        fill: '+1',
+                        pointRadius: 0,
+                    }, {
+                        label: 'Lower Bound',
+                        data: data.forecast_ds.map((d, i) => ({x: new Date(d), y: data.yhat_lower[i]})),
+                        borderColor: 'rgba(31, 119, 180, 0.2)',
+                        backgroundColor: 'rgba(31, 119, 180, 0.2)',
+                        fill: false,
+                        pointRadius: 0,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Future Units Sold Predictions'
+                        },
+                    },
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Date'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Units Sold'
+                            },
+                        }
+                    },
+                }
+            });
+        }
+
+        createChart();
+    </script>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-family: Arial, sans-serif;
+}
+
+.chart-container {
+    width: 90%; /* Adjusted width to make the container larger */
+    height: 80vh; /* Added height to control the vertical size */
+    margin: 100px auto; /* Adjusted margin to center the container and bring it closer to the top */
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    width: 100% !important; /* Ensures the canvas takes the full width of the container */
+    height: 100% !important; /* Ensures the canvas takes the full height of the container */
+    display: block;
+    margin: 0 auto;
+}
+
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <canvas id="sentimentChart"></canvas>
+    </div>
+
+    <script>
+        // Function to fetch the JSON data and create the chart
+        async function createChart() {
+            try {
+                console.log('Fetching JSON data...');
+                // Fetch the JSON data
+                const response = await fetch('/Users/kaustubhkrishna/Documents/FOSS/InsightMantra/plotting.json');
+                
+                // Check if the response is OK
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('Data fetched:', data);
+
+                // Extract x and y values from the data
+                const xValues = Object.values(data.x);
+                const yValues = Object.values(data.y);
+
+                console.log('xValues:', xValues);
+                console.log('yValues:', yValues);
+
+                // Convert x values to labels
+                const labels = xValues.map(value => {
+                    if (value === 1) return 'Positive';
+                    if (value === 0) return 'Neutral';
+                    if (value === -1) return 'Negative';
+                });
+
+                console.log('Labels:', labels);
+
+                // Create the chart
+                const ctx = document.getElementById('sentimentChart').getContext('2d');
+                const sentimentChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Sentiment Counts',
+                            data: yValues,
+                            backgroundColor: ['#4CAF50', '#FFC107', '#F44336'],
+                            borderColor: ['#388E3C', '#FFA000', '#D32F2F'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        animation: {
+                            duration: 2000,
+                            easing: 'easeInOutBounce'
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: {
+                                    color: '#7f8c8d'
+                                },
+                                ticks: {
+                                    color: '#ecf0f1'
+                                }
+                            },
+                            x: {
+                                grid: {
+                                    color: '#7f8c8d'
+                                },
+                                ticks: {
+                                    color: '#ecf0f1'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#ecf0f1'
+                                }
+                            }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error('Error fetching or parsing data:', error);
+                // Display error message on the page
+                document.body.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+
+        // Call the function to create the chart
+        createChart();
+    </script>
+</body>
+</html>

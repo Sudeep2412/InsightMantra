@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Units Sold Predictions</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+</head>
+<body>
+    <canvas id="forecastChart" width="800" height="400"></canvas>
+    <script>
+        async function createChart() {
+            try {
+                const response = await fetch('./sales_forecasting.json');
+                const data = await response.json();
+
+                // Debug: Check loaded data
+                console.log(data);
+
+                const ctx = document.getElementById('forecastChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        datasets: [{
+                            label: 'Actual',
+                            data: data.ds.map((d, i) => ({x: new Date(d), y: data.y[i]})),
+                            pointRadius: 2,
+                            backgroundColor: 'grey',
+                            borderColor: 'grey',
+                            pointStyle: 'circle',
+                            showLine: true, // Set to true to show lines connecting the points
+                        }, {
+                            label: 'Forecast',
+                            data: data.forecast_ds.map((d, i) => ({x: new Date(d), y: data.yhat[i]})),
+                            borderColor: 'green',
+                            backgroundColor: 'rgba(0, 128, 0, 0.2)',
+                            fill: false,
+                            pointRadius: 3,
+                            pointHoverRadius: 5,
+                        }, {
+                            label: 'Max value',
+                            data: data.forecast_ds.map((d, i) => ({x: new Date(d), y: data.yhat_upper[i]})),
+                            borderColor: 'rgba(173, 216, 230, 0.6)',
+                            backgroundColor: 'rgba(173, 216, 230, 0.2)',
+                            fill: '+1',
+                            pointRadius: 0,
+                        }, {
+                            label: 'Min value',
+                            data: data.forecast_ds.map((d, i) => ({x: new Date(d), y: data.yhat_lower[i]})),
+                            borderColor: 'rgba(173, 216, 230, 0.6)',
+                            backgroundColor: 'rgba(173, 216, 230, 0.2)',
+                            fill: false,
+                            pointRadius: 0,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Future Units Sold Predictions'
+                            },
+                            tooltip: {
+                                enabled: true,
+                                mode: 'index',
+                                intersect: false,
+                                callbacks: {
+                                    label: function(tooltipItem) {
+                                        // Corrected variable name
+                                        return `${tooltipItem.dataset.label}: ${tooltipItem.raw.y}`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'month'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Date'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Units Sold'
+                                },
+                            }
+                        },
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading chart data:', error);
+            }
+        }
+
+        createChart();
+    </script>
+</body>
+</html>
