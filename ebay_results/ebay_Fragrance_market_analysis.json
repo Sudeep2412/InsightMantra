@@ -1,0 +1,597 @@
+{
+    "search_term": "Fragrance",
+    "total_products_found": 20,
+    "analysis_date": "2025-05-08",
+    "top_brands": {
+        "fragrance": {
+            "feedback_count": 0,
+            "product_count": 2,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 10,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n9 product ratings\n5\n9 users rated this 5 out of 5 stars\n9\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.5\n8 product ratings\n5\n5 users rated this 5 out of 5 stars\n5\n4\n2 users rated this 4 out of 5 stars\n2\n3\n1 users rated this 3 out of 5 stars\n1\n2\n0 users rated thi...",
+                    "rating": 4.5,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.1111111111111111
+        },
+        "mirada": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "parfum": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "afnan": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n1 product ratings\n5\n1 users rated this 5 out of 5 stars\n1\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "nana": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "cristalle": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.5\n20 product ratings\n5\n16 users rated this 5 out of 5 stars\n16\n4\n1 users rated this 4 out of 5 stars\n1\n3\n1 users rated this 3 out of 5 stars\n1\n2\n1 users rated ...",
+                    "rating": 4.5,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "unusedguerlain": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "xerjoff": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "lattafa": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.8\n92 product ratings\n5\n81 users rated this 5 out of 5 stars\n81\n4\n6 users rated this 4 out of 5 stars\n6\n3\n3 users rated this 3 out of 5 stars\n3\n2\n2 users rated ...",
+                    "rating": 4.8,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "fast": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        }
+    },
+    "all_brands_count": 17,
+    "products": [
+        {
+            "title": "Unknown",
+            "brand": "Unknown",
+            "feedback": 0,
+            "price": "Unknown",
+            "url": "https://ebay.com/itm/123456?itmmeta=012DEW30YG0MEEKND7NH&hash=item123546:g:acwAA9KNiJowH:sc:ShippingMethodStandard!95008!US!-1&itmprp=enc%3AbgepL1tlUHjMGCVfSTGJh%2BzsVKeJ3CQk7NizDI4BZeppuFnmyS6Ijyp8lh%2FnEw%2BWqO7uTV1Q6izE1R0T54aV8j71F4xlWfVcGft4%2FiOQhtqVXA1rW6M1atPARQRmhqUxtEPJKhKtSFgI%2Bvwlzb0GwVCtkp%3ABlBMUObkmabpYw",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Unknown",
+            "brand": "Unknown",
+            "feedback": 0,
+            "price": "Unknown",
+            "url": "https://ebay.com/itm/123456?itmmeta=012DEW30YG0MEEKND7NH&hash=item123546:g:acwAA9KNiJowH:sc:ShippingMethodStandard!95008!US!-1&itmprp=enc%3AbgepL1tlUHjMGCVfSTGJh%2BzsVKeJ3CQk7NizDI4BZeppuFnmyS6Ijyp8lh%2FnEw%2BWqO7uTV1Q6izE1R0T54aV8j71F4xlWfVcGft4%2FiOQhtqVXA1rW6M1atPARQRmhqUxtEPJKhKtSFgI%2Bvwlzb0GwVCtkp%3ABlBMUObkmabpYw",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Mirada Hashtag Femme",
+            "brand": "Mirada",
+            "feedback": 0,
+            "price": "US $24.99/ea",
+            "url": "https://www.ebay.com/itm/375420651967?_skw=Fragrance&itmmeta=01JTR6BQ765D81GKZWXDGFG2KQ&hash=item5768d089bf%3Ag%3A7-gAAOSwjWRmPV3I&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1dZ3K96Sp4dp%2Bx%2B%2FXrrDFsgppuVhRIesvqp2MgixwOrYp4D1E35%2BOr8YNSqgbdlby%2BGSg3dbLg1kdSPCs451ZiXjyn2cgcZ3BGvXKLb6zqxfAoWmEDBYT7qMoLWXgPbFjrx5e2nfE1PNh02%2B7ZG4xzQaY6s%2FbfVLeB%2B5U6cC5iJ21RrTQMN%2BUxoCu2FMYnY7QsrryGHyIbAd937ASukDpsrzG%2FLuCCavwKoczcaIyafGVtJzhLTIkZxYS2mLGgJHx9jtboP1%2FMBqCidHwY1%2BtlT%7Ctkp%3ABFBM8POuhtZl&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Fragrance World French Avenue Liquid Brun Eau De Parfum Spray For Men 3.4oz /",
+            "brand": "Fragrance",
+            "feedback": 0,
+            "price": "US $34.99/ea",
+            "url": "https://www.ebay.com/itm/135661857147?_skw=Fragrance&itmmeta=01JTR6BQ76KV06A4Z35J7H3GF6&hash=item1f9613a97b%3Ag%3AJuYAAeSwSFpn6hih&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1eNr4Z9w4Hta5rmvLsujeVMGmp8k7hyjFFb1r09oolcGw7YfYhv9HdG21afNpRzdMG3vsbey4u6xGlV3p79oA4TS%2BgFMv2LJZfeI7wXS6q3ZC%2F39C8aJi4wj0yjTrxnA3fPqyWT%2BOPp8aLsEOZLBvGlJ7c6LQCzp2to4mg0AJh4fjlN0NKKqSS0YWMtzUG0CqsA4hFr5wGUw%2Fun0Uweh1FqR8B%2FDRUO9gByZJWEVFfgn5y4jeqU3t1AzHW9uXZ3jdfOKPEsxncD7xAe2WXuzudm%7Ctkp%3ABFBM8POuhtZl&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n9 product ratings\n5\n9 users rated this 5 out of 5 stars\n9\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 9 reviews\nby kristsal-82\nJan 09, 2025\nSmells amazing, leaning more feminine bu...\nSmells amazing, leaning more feminine but lingers in the air for a good while. You'll sm...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "Parfum",
+            "brand": "Parfum",
+            "feedback": 0,
+            "price": "US $35.00/ea",
+            "url": "https://www.ebay.com/itm/396383358220?_skw=Fragrance&itmmeta=01JTR6BQ7679065Z6S5Y3W78ND&hash=item5c4a4a0d0c%3Ag%3A-aYAAeSw2CRn6g2n&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1edvZjG3SIbIdsFNsp%2B6Y3SHad%2BIy7Y73Sn8HYG5G8o1eoTZ1wqB%2B70mso05R5vqB6piKSeKZG6ZUVUBoLdGP41s61eYEWc7mSiCwfkPuOeL%2BUfgqG%2F4Mj4LRoFFPtA4hW0RNzX6Bpp7eQAMpBnYzEGuFDiNPD6ql6UumdKfFcNqQ0e63J7IgOgoZ9kxsZcosPL4qjZlBV%2FexDrByB5bda1B0082UMQMMT44siwqWxCD9j%2B1K%2Fg6z9b4LP0M0P7MIdGgnOUQ5k0qtFyy6Gs3jWT%7Ctkp%3ABFBM8POuhtZl&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Fragrance World French Avenue Ghost Spectre Eau De Parfum Spray For Men 2.7oz",
+            "brand": "Fragrance",
+            "feedback": 0,
+            "price": "US $54.99/ea",
+            "url": "https://www.ebay.com/itm/127024003835?_skw=Fragrance&epid=8063048967&itmmeta=01JTR6BQ76VM10C28WQ5W7RH4C&hash=item1d93387afb%3Ag%3APQsAAeSwtEhn6hfM&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1d%2BZm2PhPAOdwlA%2Ba%2B1K4PTgVfa5Lf%2Fsd%2FjZY%2F1jSGfBBjZcTsBZOWARYcTLjjBfw9pbQF4DuatRvEalA9Ps5ZLyT%2BVhRMZGNgu9j0y5odXYU3kszCMUZzJYo7Hat1BxvByRhdPp53DOXujKXEs0BDaSqa2DbynG4yDKQKq%2B7wlqTKrdqeNGgOBjBTFuDj9fTuTRNWL4WeKwSmOM9c5e6Q8yTf5VMESMhXacqr%2Bdc%2BMottqPF5daNUAVIA7qjqQcjtc8LYATFOQNOGkoRIXhbN2%7Ctkp%3ABFBM8POuhtZl&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.5\n8 product ratings\n5\n5 users rated this 5 out of 5 stars\n5\n4\n2 users rated this 4 out of 5 stars\n2\n3\n1 users rated this 3 out of 5 stars\n1\n2\n0 users rated thi...",
+                    "rating": 4.5,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 8 reviews\nby bk49981\nApr 16, 2024\nBeautiful Vanilla Elegance\nA very nice vanilla powerhouse you can wear for almost any occasion, and at a price point that won’t make you...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "AFNAN 9 PM EAU DE PARFUM SPRAY FOR MEN 3.4 Oz / 100 ml BRAND NEW",
+            "brand": "AFNAN",
+            "feedback": 0,
+            "price": "US $24.92",
+            "url": "https://www.ebay.com/itm/387743681304?_skw=Fragrance&itmmeta=01JTR6BQ763J4TRGFM224PG9VZ&hash=item5a47530b18%3Ag%3AVlcAAOSwRj1nEgIY&itmprp=enc%3AAQAKAAAA8FkggFvd1GGDu0w3yXCmi1fIZa%2FQ%2FrVtXg4UAFl2DxzJJrCz5qQdgEX5x30vTmN%2FINVyFYk16diYhX%2Fag1oeiVcDSWsdz%2Fmck0hDRMVUMltvAGYQSseStX7SeXS17wpUrY2gHiQAkQv1HJmLlsyED1TY2fTdQFb%2FzeA0T4%2BbXYvX5fGCAmNp8Qi7xyxx0hi1QvhVU0Bm%2FolL77rP1fqe6e3vvkNSShSMN7cpWZpqx1VmB2j9iBcTUHYQxAQHGqM%2BWp6QBM77GlFlTL0TGhP0PLzoSnTtLJnN5%2FXMgQDHNwMkdJeWDTAp4Hl7r50jdRImnA%3D%3D%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n1 product ratings\n5\n1 users rated this 5 out of 5 stars\n1\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 1 reviews\nby joga-1008\nFeb 11, 2025\nGreat smell, not too strong, stay on for...\nGreat smell, not too strong, stay on for a long time, he loves it.\nVerified purchase: YesC...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "NANA Libroaria No.7 & No.8 eau de parfum EDP 50ml 1.7 oz NEW FROM JAPAN",
+            "brand": "NANA",
+            "feedback": 0,
+            "price": "US $529.00",
+            "url": "https://www.ebay.com/itm/356762311246?_skw=Fragrance&itmmeta=01JTR6BQ7666K9ZRD08YHZ9CDQ&hash=item5310b0da4e%3Ag%3Am0EAAOSwopFoDJj3&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1cae3beaMFJp%2FcI3nN9Uw4HErjJyP%2Bffl%2BJM9g07zgv3EI25G3gJ10jHww8IZB7QmKrJZdQZawrUy%2BKG8Cu7WkKPd7DLzYS2%2FxLqOSXuZKja45aERArIHlYrfVtlsWcIklziR1%2BTzhlygmZKYrlU8zpEHwXfy1zoB2pgm0bqxoZwFcMHhju6gdLnbc8pX1i4pfDo9aW8ED%2B1RdlE%2FtJReVpPMwpQfXFln%2FwQnrb1QZoRSeYuu38ySP0jNWupskGY17y8TuMa95Uu9e1IQE%2B7IcB%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "CRISTALLE CHANEL Eau De Parfum Spray 3.4 oz / 100 ML Made In France WITH BOX NEW",
+            "brand": "CRISTALLE",
+            "feedback": 0,
+            "price": "US $164.00",
+            "url": "https://www.ebay.com/itm/297258868881?_skw=Fragrance&epid=1500588967&itmmeta=01JTR6BQ764QFRSQ8CB1F42C8M&hash=item4536026091%3Ag%3AbvkAAeSwDiZoD4su&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1dkWkJUgTBL%2BruNmBbiP8wx2FywRMr5YxtkcCkCTgdDBT%2Fyo%2B1%2BJy%2FkAMR5VjiFkzByFhVD4KAHbgMiVt2exvteNSqMeGBGu81chUAXqbSOiyNv%2FjIwr9S8YgPbMrjbMJHLA0OwvCCkwaFKYObV4qTnBNqThHisE8gpQXTkAKz0jm0LT4O3k%2Fd8O9FVcG4YYnHplu%2Bb9ShqQd7JFOIRb%2FG1MTBCxENmtfXXPVU0Jb3rdA%3D%3D%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.5\n20 product ratings\n5\n16 users rated this 5 out of 5 stars\n16\n4\n1 users rated this 4 out of 5 stars\n1\n3\n1 users rated this 3 out of 5 stars\n1\n2\n1 users rated ...",
+                    "rating": 4.5,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 18 reviews\nby ther_nas\nOct 18, 2015\nTOP FAVORABLE REVIEW\nMy Fragrance\nI've been using Chanel Cristalle eau de parfum for over 20 years. I worry that it will be discontinu...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "[Unused]Guerlain Shalimar Millesime JASMIN Eau De Parfum 50ml",
+            "brand": "[Unused]Guerlain",
+            "feedback": 0,
+            "price": "US $189.00",
+            "url": "https://www.ebay.com/itm/365588551020?_skw=Fragrance&itmmeta=01JTR6BQ764RCXCD9BD51T6NZH&hash=item551ec6956c%3Ag%3A7AMAAOSw-PBoHAVJ&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1fWVH0wDHDm4XCOWWSsFt1NXQw0odG4jErhGd%2FMkbbv6ZoZRQmyZRV49My1wYPS%2BZZZ8PUlag5OzsfXFd4vwwO9nGA86m9ZuHtJ25p6f3zTH5en5hror8Lsepqii95aVlHd%2BYre9tzFX8ld3BqimFiRr94fTCO0LSGuwYKYuu6clOx9qytBJKk%2FLXwELqwqfgttvEpLBSJL5XXmFDRpaJq4Zr5wArPU83EMLdFGPgsgpQ%3D%3D%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "XERJOFF Renaissance (XJ 1861) 3.4 oz (100ml) EDP Spray NEW TESTER with Cap",
+            "brand": "XERJOFF",
+            "feedback": 0,
+            "price": "US $119.50",
+            "url": "https://www.ebay.com/itm/197291147910?_skw=Fragrance&itmmeta=01JTR6BQ7649DQDJ6HVW3THCZA&hash=item2def780286%3Ag%3AES8AAOSwixBoGlrM&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1fIHPd5k9OXfo5wDMMjbKSEOir4sGGESPvHnzjkAuEbJ8sibFvjEtoyAEvfP8D7M2ghSwSHy81FL9ezsdpoab%2BwcA0adHQAyAy0SY46Se094jIMknW5nEBuuFOD8Pc4efHQH2gDyknj9zIvOi5EB1YF87rO2xUG3ly7nXhIX3Gzta1TUYkWSV67%2BBcFwkXFU73%2B6NgflPUgY28sX1LfhuDPI7J8X6mkVyCc%2Fr2HJCDeDA%3D%3D%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Lattafa Yara Eau de Parfum Spray for Women, 3.4 Fl Oz (100 ml)",
+            "brand": "Lattafa",
+            "feedback": 0,
+            "price": "US $24.99/ea",
+            "url": "https://www.ebay.com/itm/126799817278?_skw=Fragrance&epid=23052064701&itmmeta=01JTR6BQ76QW1BCM6DJVY78DKN&hash=item1d85dbaa3e%3Ag%3A224AAOSw2g1mUI-J&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1fKNTM8Xp6zSy4GxaPuf3%2FfkfAaTTyAfBMMGu5M24Xi01tMMYHY42%2B4dSDourCPL%2FX%2FoZKkk8IDLigDZ4PqtOknedpXwz9jHx0oA3g360weBxabIdjhB1Y9mHapXcnOCdSE%2BCCd7Gc1etajm5K6a8efua1CDWaqbogbnH3dyi8uPW66pgfyYF65wgrldsnTCOb%2FHvbJua8lRp0VXGecNPsURPX%2FPXb2QVFxkS7ypLpd%2FeZoJdZXelhdPqt9ObCL%2B%2FvvcnH0L27ueL0sGNrvcV%2BM%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.8\n92 product ratings\n5\n81 users rated this 5 out of 5 stars\n81\n4\n6 users rated this 4 out of 5 stars\n6\n3\n3 users rated this 3 out of 5 stars\n3\n2\n2 users rated ...",
+                    "rating": 4.8,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 91 reviews\nby d_silent_one\nDec 24, 2022\nTOP FAVORABLE REVIEW\nBeautiful perfume!\nThis has fallen easily in my top 10 best perfumes. It it fluffy, warm, cosy, like a cloud ...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "✅️FAST SHIPPING Arabiyat Prestige Nyla VANI-ELLE Perfume VANIELLE 80ml 🌼🌸🌼 ✅️",
+            "brand": "✅️FAST",
+            "feedback": 0,
+            "price": "US $118.99",
+            "url": "https://www.ebay.com/itm/267231098404?_skw=Fragrance&itmmeta=01JTR6BQ76TEBZAQ9BBYTH6FDZ&hash=item3e3836f624%3Ag%3AXsYAAeSwc9FoCyj0&itmprp=enc%3AAQAKAAAA0FkggFvd1GGDu0w3yXCmi1fHTBrBPIqySr0QlazzIiSJWaxL0v2AUvdRUFRM8W7AZXn3%2BEpi0KFNYEjVQa%2BbQsq%2FeTSAPBbPwlPwcMrjhre138CcRmzTt8XDmOVfDXsZe5ikA3DnN2vAPXJtX3VnHe%2FkBwq6DHuh1rz%2F95h6rcpJEvQRMtAJussPwF8XoeMXICHb1pbDTZZZP0eaiL0ZDiLTrvKfQIHqoAYpSMJjNJRSjHCpPPA9C3hrBkF77DprT2oT5qhiPgmznL97zcpCvMw%3D%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Arabiyat Prestige Nyla Perfume EAU De Parfum 80ml Fragrance Luxury Unisex",
+            "brand": "Arabiyat",
+            "feedback": 0,
+            "price": "US $155.00",
+            "url": "https://www.ebay.com/itm/267232218291?_skw=Fragrance&itmmeta=01JTR6BQ76NZ4DFR7Q1ATKPRRW&hash=item3e38480cb3%3Ag%3AnCEAAeSw7NRoDK0w&itmprp=enc%3AAQAKAAAA0FkggFvd1GGDu0w3yXCmi1fwjrKo8sG08ieik43WGhgLaDQJZ%2BnCEU9q9Kqc--faI3OToLwWklUlNuDj2ffXcU1plw2nQnKTPB%2BRTxTLifonxZwIO9apyyWTCwaILK7iiOolY5eQinbuyVFkwPny16eIjFdRsDEDISOrxKfUSmC%2FVzm%2F6Y58bdn0%2BiibUfiMMViiOX9Ki%2FSLrDl9llk9fFmXoJOUi%2F86%2FPej7AM134HQFiMhbks1szihPXdb4K5h1VtnkFP30vFrlB61LwllP3U%3D%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "IN LOVE AGAIN by YVESSAINTLAURENT 3.3 oz / 100 ML Eau De Toilette Spray",
+            "brand": "IN",
+            "feedback": 0,
+            "price": "US $132.00",
+            "url": "https://www.ebay.com/itm/297253268584?_skw=Fragrance&epid=1600412237&itmmeta=01JTR6BQ76DQ512DJRJF8EYHKK&hash=item4535acec68%3Ag%3AZugAAeSwjzloEdyT&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1fVyaMiWMn7%2Fy%2FhrkN41fw4RYseTnXOGzan%2FYn0euX%2FEk41mdrCjSGGxjZLd9l1NKbdmAgKgWEx7FcG%2FNZyGPL5m4qPxDARjAHo%2BiF%2F2C6vc%2BEwyKp77si%2FKSCuW4HwVfZeZbqg%2FFsiyBXqoAhhORWWSKOffeVqEXeMZXY%2FuL9wJ0X2CQysfHvBpJWwkw0X30snBHSOQssX29aRgHs3BKKDO4RG%2FW0Vu%2FXRfzcJKD3DVg%3D%3D%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.3\n3 product ratings\n5\n2 users rated this 5 out of 5 stars\n2\n4\n0 users rated this 4 out of 5 stars\n0\n3\n1 users rated this 3 out of 5 stars\n1\n2\n0 users rated thi...",
+                    "rating": 4.3,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 2 reviews\nby monkeysimi\nJun 24, 2019\nThe smell is not the same as it was used.\nThe smell is not the same as it was used when it was first released. The smell is not like ...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "Valentino Donna Born In Roma Perfume 3.4oz.EDP Spray for Women New in Sealed Box",
+            "brand": "Valentino",
+            "feedback": 0,
+            "price": "US $49.90",
+            "url": "https://www.ebay.com/itm/126980616599?_skw=Fragrance&epid=15034499654&itmmeta=01JTR6BQ76NZDA9PA69WW90KYW&hash=item1d90a27197%3Ag%3AUx8AAOSwbvBnyzob&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1eIz7%2FVdaBpC5s%2F8Y1nJtt0tFWx51qIBN%2B5XLlAf5jnaC9Nmna9TjRauqYR2FJIyCVaZVb6axP42FyqAJ3Pvp%2F44HDeWcGrLKWMeP3NZMpHt%2Be%2Fuxv8ELUAuPRYU3a47xiNKuMmbqfn9MmLdc%2BSWO8cDrfaosuqOJw3luXPmJad6fZNywLOCBqd64jdAT41JZBvoOUsNSHkI%2FY0Dxr%2FIUgem1OuG94tHBX0q7JT90trK9Q%2FpzNMKFmFWggD5hWv%2B%2BJyozw4HDeXv6p4ka%2BM22oO%7Ctkp%3ABFBM8POuhtZl&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.3\n33 product ratings\n5\n25 users rated this 5 out of 5 stars\n25\n4\n0 users rated this 4 out of 5 stars\n0\n3\n4 users rated this 3 out of 5 stars\n4\n2\n1 users rated ...",
+                    "rating": 4.3,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 33 reviews\nby butterflies-in-autumn\nJul 15, 2020\nTOP FAVORABLE REVIEW\nWarm and Light\nThis is a lovely feminine fragrance that doesn't smell too girly. It has a lovely van...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "PINK EAU DE PARFUM 1.7oz",
+            "brand": "PINK",
+            "feedback": 0,
+            "price": "US $28.99/ea",
+            "url": "https://www.ebay.com/itm/335318503186?_skw=Fragrance&itmmeta=01JTR6BQ77J17S28Q6WRJANB8V&hash=item4e128a4f12%3Ag%3AOr4AAOSw0ftmAV80&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1eplKgOYwA4okY5tOKbAfwSoZG94D1itiup%2F12YC7%2BqXB7cpF3Bk7CiUPR9Zn1oOrLlSA1vfwZB8yWYeqd9b5CUR7GU0WLWn48oTOZc6jRWq%2BBCifUP2KiEBhfYvcg0jPzGLncqToIhxBUZT4%2FbuXPiq%2Fs5zAzbqB%2BkfR0iY24uCBK8Bu7vaYxV1N0q%2F3uvmWlc6ikb9GyUcLvKC5IJVQzahgSsm6q%2BVCb9SgmUK4p0H9b3CcD7abZHe7MoeymUj1wtPiIQDsqzvDbL9mWAX%2Fp7%7Ctkp%3ABFBM8POuhtZl&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "100ml 3.4ozAfnan 9 PM Eau de Parfum Spray, Men's Cologne, 3.4 oz",
+            "brand": "100ml",
+            "feedback": 0,
+            "price": "US $24.68",
+            "url": "https://www.ebay.com/itm/387806850507?_skw=Fragrance&itmmeta=01JTR6BQ774N91FHT6VCVASZTR&hash=item5a4b16edcb%3Ag%3AVlcAAOSwRj1nEgIY&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1eWdn7znklYipXfnRDO5JW7S4B%2FXP4N9v7jf8SLzW9XuB5HCJcXr5UoWxeMqO1ZfYUnozJ%2FmSAE%2BV9vL1pSbuq5sicVC2aKHNSBvEPR5xCEnh7Sa0UWewd09wtf3KPPBOd816AlXfZXfnZzWIjqemAt3jkZJAMHhHaXbOXaea0Y45LGn50PsnJdy4m7f5Zt47RaQ14ttREDs49xKhRtYyyywUJ5fdQMfeb4AjoU7iMM135N4r%2F8jV2%2FUt%2BJmbp%2FXSaMgMqEDSU9Giijp0nvislO%7Ctkp%3ABFBM8POuhtZl&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n1 product ratings\n5\n1 users rated this 5 out of 5 stars\n1\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 1 reviews\nby joga-1008\nFeb 11, 2025\nGreat smell, not too strong, stay on for...\nGreat smell, not too strong, stay on for a long time, he loves it.\nVerified purchase: YesC...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "10ml Venom Pheromone Fragrance Perfume Fit Men Women Long-Lasting Stimulating US",
+            "brand": "10ml",
+            "feedback": 0,
+            "price": "US $4.97",
+            "url": "https://www.ebay.com/itm/365316474717?_skw=Fragrance&itmmeta=01JTR6BQ77N5K7XE078EJSNX5E&hash=item550e8f075d%3Ag%3ArhUAAOSwRG5ndG0M&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1eIzM18pKFpp34RBQRjQSJdgLHY8cR4B9IU0%2F%2BkPuXbWF96%2B0sw%2B2FPJ5JC5gIBoupYfDue9Fi8iAnh3cIELvIhIu5wQVYve5S27iSIDqtA%2FQyJ9U8ASX%2FdDJYIiL%2BCuzZn56KhIRJcfYavH%2FpJSLHMynYJ2tilnWvgE33s9rMVoBFus0Ahl8uBbqulPFfZpdMWxX1bm0Rr6DlRhf%2FU89%2FGBLFIZZXwY5gicBgT%2FXq0CdzT80PO8t0bSyDnFyvJhH3%2ByZP3N9AQ3SOCDwxBR9yI%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Eilish 100ml Women's Eau De Parfum",
+            "brand": "Eilish",
+            "feedback": 0,
+            "price": "US $33.93",
+            "url": "https://www.ebay.com/itm/306251850674?_skw=Fragrance&itmmeta=01JTR6BQ778F04PYHY7BCH5J82&hash=item474e0863b2%3Ag%3A1a8AAOSwNIFn%7E7xe&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1diaQI7iCwYK%2FCqUBsLy3y0tZMRupkZ8AUeAeQOcbI3vC7LnqcO7p7ZvtLSp%2FHAi5HBlZl%2F52%2FBT0IgJPp5UjUIgWxgg07U26cITClzAw8d5TtrkrWEmBcZO4%2BNrMA%2Fi8AtWuWAYafCIZtyO8YMkOe7bfemNZW7nY5gF4kEUVSHVUp6YbhM36ybwMI2I06pbrv%2FPfzH0PYspUDzs47fB6DNo9ap4qxvMS7OGy6zjGP1Tw%3D%3D%7Ctkp%3ABk9SR_DzrobWZQ&keyword=Fragrance&sacat=0&relatedSearch=true",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        }
+    ]
+}

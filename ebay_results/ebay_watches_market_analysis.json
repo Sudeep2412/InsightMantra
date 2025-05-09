@@ -1,0 +1,562 @@
+{
+    "search_term": "watches",
+    "total_products_found": 20,
+    "analysis_date": "2025-05-06",
+    "top_brands": {
+        "mens": {
+            "feedback_count": 0,
+            "product_count": 4,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.2222222222222222
+        },
+        "vintage": {
+            "feedback_count": 0,
+            "product_count": 3,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.16666666666666666
+        },
+        "bulova": {
+            "feedback_count": 0,
+            "product_count": 2,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.9\n16 product ratings\n5\n15 users rated this 5 out of 5 stars\n15\n4\n1 users rated this 4 out of 5 stars\n1\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated ...",
+                    "rating": 4.9,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.1111111111111111
+        },
+        "omega": {
+            "feedback_count": 0,
+            "product_count": 2,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n2 product ratings\n5\n2 users rated this 5 out of 5 stars\n2\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.1111111111111111
+        },
+        "invicta": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "rolex": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n4 product ratings\n5\n4 users rated this 5 out of 5 stars\n4\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "waterproof": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 0,
+            "reviews": [],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "citizen": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.8\n32 product ratings\n5\n28 users rated this 5 out of 5 stars\n28\n4\n2 users rated this 4 out of 5 stars\n2\n3\n0 users rated this 3 out of 5 stars\n0\n2\n2 users rated ...",
+                    "rating": 4.8,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "2025": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n1 product ratings\n5\n1 users rated this 5 out of 5 stars\n1\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        },
+        "seiko": {
+            "feedback_count": 0,
+            "product_count": 1,
+            "total_rating": 0,
+            "rating_count": 0,
+            "review_count": 5,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.9\n38 product ratings\n5\n35 users rated this 5 out of 5 stars\n35\n4\n2 users rated this 4 out of 5 stars\n2\n3\n1 users rated this 3 out of 5 stars\n1\n2\n0 users rated ...",
+                    "rating": 4.9,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ],
+            "average_rating": null,
+            "market_share": 0.05555555555555555
+        }
+    },
+    "all_brands_count": 11,
+    "products": [
+        {
+            "title": "Unknown",
+            "brand": "Unknown",
+            "feedback": 0,
+            "price": "Unknown",
+            "url": "https://ebay.com/itm/123456?itmmeta=012DEW30YG0MEEKND7NH&hash=item123546:g:acwAA9KNiJowH:sc:ShippingMethodStandard!95008!US!-1&itmprp=enc%3AbgepL1tlUHjMGCVfSTGJh%2BzsVKeJ3CQk7NizDI4BZeppuFnmyS6Ijyp8lh%2FnEw%2BWqO7uTV1Q6izE1R0T54aV8j71F4xlWfVcGft4%2FiOQhtqVXA1rW6M1atPARQRmhqUxtEPJKhKtSFgI%2Bvwlzb0GwVCtkp%3ABlBMUObkmabpYw",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Unknown",
+            "brand": "Unknown",
+            "feedback": 0,
+            "price": "Unknown",
+            "url": "https://ebay.com/itm/123456?itmmeta=012DEW30YG0MEEKND7NH&hash=item123546:g:acwAA9KNiJowH:sc:ShippingMethodStandard!95008!US!-1&itmprp=enc%3AbgepL1tlUHjMGCVfSTGJh%2BzsVKeJ3CQk7NizDI4BZeppuFnmyS6Ijyp8lh%2FnEw%2BWqO7uTV1Q6izE1R0T54aV8j71F4xlWfVcGft4%2FiOQhtqVXA1rW6M1atPARQRmhqUxtEPJKhKtSFgI%2Bvwlzb0GwVCtkp%3ABlBMUObkmabpYw",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Men's Business Stainless Steel Waterproof Quartz Wrist Watch Luminous With Date",
+            "brand": "Men's",
+            "feedback": 0,
+            "price": "US $18.99/ea",
+            "url": "https://www.ebay.com/itm/176474095421?_skw=watches&itmmeta=01JTJ3VVK5TMDXKNACB4DA1FD3&hash=item2916acff3d:g:Pe0AAOSwya5m875e&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1erfHjab9iH3NHmlIgWtg%2FZFSBpAcQA60DCE4UlwbBg9pFxfDC1xVJhc8DIQ9whSTPrdSI8eTv%2FvD%2FF%2Fkgx1y2M%2FP7yO3mZp9btjbv6c0hWhYPp%2BQl99dmp5RTmEUoH%2B4c5UXME4AGkBTl24Ss2eScjNjO9Ifo0aB24jB5Co2Owxwk2WEQYxeMMMFWr6sU9u3%2BwCe7IK9950w7b19zCZopkTQkl16SPQk2eTHILPBd1CkStru8RLTl1vBmMU0%2F%2BbTOKm8iDk3MjetZhAY%2BZfFzD%7Ctkp%3ABFBMlrrvw9Rl",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Bulova Marine Star Red Dial Stainless Steel Men's Quartz Watch 43mm - 98B350*",
+            "brand": "Bulova",
+            "feedback": 0,
+            "price": "US $160.06",
+            "url": "https://www.ebay.com/itm/315909953326?_skw=watches&epid=22037067362&itmmeta=01JTJ3VVK63WDK5MCHXNBDC4XK&hash=item498db3572e:g:bDoAAOSw6NFnJEvk&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1dQrAIc2BL2GbrCsHvmww2jQT%2Fz6Q8mwKCGZGhgemUGGaqiMe1NKxpVji7ED0nAcfFMbBBtw7Yg3yWPt72c54r7rFFjH5hBeykrzN4--uXzmculKr632%2BysNGOuXU8Ue%2BkgvwRCrJSU8pI7IUhpNR8kg5lAA8GV4Vzs5j7LS3YcNrs%2By8%2Fu3mOAit0Hv884FUA4U6VeqZRJDCTejRgSOef7F3VH%2BujdlxKTgW33%2F7O2NIU8qJICfKbXSK6IEdSDN08uDA9rtCFpESm%2F71SN7fWy%7Ctkp%3ABFBMlrrvw9Rl",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.9\n16 product ratings\n5\n15 users rated this 5 out of 5 stars\n15\n4\n1 users rated this 4 out of 5 stars\n1\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated ...",
+                    "rating": 4.9,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 15 reviews\nby bre.bke.txb0gdd9oa\nSep 06, 2021\nTOP FAVORABLE REVIEW\nGreat looking watch!!\nI had high expectations for this watch and it met them all. The grey tone of the ...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "Men's Fashion Ultra Thin Watches Business Stainless Steel Mesh Quartz Watch",
+            "brand": "Men's",
+            "feedback": 0,
+            "price": "US $2.12",
+            "url": "https://www.ebay.com/itm/186988035507?_skw=watches&itmmeta=01JTJ3VVK653FKFK8W9G4QFEG7&hash=item2b895afdb3:g:NR8AAOSwTFRkq63I&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1djIt3sgDqNSXpdZRClyDN3tb4rZeaqUgOD0zOibqP9kuBA%2FUJzSTHC11uzQex3QsHsQzpGRkyiTm3ZAIvkrPLcI9dSSsgBH748VgNpo%2BDJ6eFzQuEV5doh1rMo%2B10CzRMj2S8P6Adz1NmPm%2FEMz20LIo4hws4h1LFCthSMcbuaeLDdLJi%2FYEqC8XvGyJo49vH99%2FQLWlIggTZ8gMgl0lI%2F8e5xIDZiC0CDIue8eADXtzLGJa846fDdyv2qPPhVHDX51E8xDwCU12uYcc12tYaK%7Ctkp%3ABk9SR5a678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Vintage Watch Rakets 24h Mechanical Wrist Polar Mens Russian Soviet USSR Strap.",
+            "brand": "Vintage",
+            "feedback": 0,
+            "price": "US $450.00",
+            "url": "https://www.ebay.com/itm/356864761007?_skw=watches&itmmeta=01JTJ3VVK6F4HF0TP4SMXH4A2G&hash=item5316cc1caf:g:CgsAAOSwi2VoFmTN&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1fnqEu4JvmiYJHL0PbmauvuBbL6l4kR1vnWCp4SFo7QnuOm81o6tQTcD4PIzFMo8CVDXaWRtttDtkzAfLaHoFgvfWmLcva%2BXZVySNyccYZGSWe3xfPIrOW8Og80Mdq67l%2BHoDbsJGOmYBM4w82aqVx3XPSIJyhMGVU0C2lO7yfi63oeFFzxcwKYYDrNALnf4nC6DUNZti5cQGBf%2BdPTP5xN22gSW12nCkngSeUjdEvf0w%3D%3D%7Ctkp%3ABk9SR5a678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Invicta Men's Pro Diver 45mm Quartz Rubber Strap Watch - Choice of Color",
+            "brand": "Invicta",
+            "feedback": 0,
+            "price": "US $34.99",
+            "url": "https://www.ebay.com/itm/335930354247?_skw=watches&epid=9064103907&itmmeta=01JTJ3VVK6VHPA03178V4K2DDX&hash=item4e37026a47:g:zYwAAOSwqqFoC-bs&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1coxFBI6CrD6S6ZfdxQTpUKEPJ%2FV6%2FErbOLGvsBUmp5qB4GghXahca%2BZKCyQz5ejyQDkYbtCZ2sbyNh--C4vwvQwqWXyQrW8H3FVB1r8olLkf9%2FrZaL%2Bs%2BNpvvHTqNpGYlTlK8DNFvFLzkGlmPQ5tlyb4SD91oUAVUG6WLiDmlZRE%2B3rKoC83wgSry2NN8c8cUxjtOXhAhAOElDb20c8uO6k6I%2Ban2d15KtbhPbL3Fx1g%3D%3D%7Ctkp%3ABk9SR5a678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "omega seahorse aqua teera 150m watch",
+            "brand": "omega",
+            "feedback": 0,
+            "price": "US $265.00",
+            "url": "https://www.ebay.com/itm/316764021961?_skw=watches&itmmeta=01JTJ3VVK6VR1NBPQ5MB8A99RC&hash=item49c09b64c9:g:0V8AAOSw8ghnuuYr&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1erP9Zen08U1h3St%2F61W25fnhcWCq9XlDZsYjHQaTWSbmYisA3xn60sM%2F6WEXlJk3eXHQBs8Hd5c8V%2Fovz%2F56cs51otEfBdOls7B3HKin9Yb9f49Kv5AkSB7Subw2NgbrxOqVjjwAQ%2BsUwT851qoHS2k9DLr5wj7nJm87SK2tLYXaF0rr0mP3ByPzmwJtucocmYmWnzH2SL0C%2BVI7s3tMdT2xLjo5EpHmgudtd9pKHr3g%3D%3D%7Ctkp%3ABk9SR5a678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Rolex Datejust Ref.16014 Stainless Steel & White Gold 36mm Grey Arabic Dial",
+            "brand": "Rolex",
+            "feedback": 0,
+            "price": "US $5,850.00",
+            "url": "https://www.ebay.com/itm/187199423105?_skw=watches&itmmeta=01JTJ3VVK6QGJ7CBZ4ZRA7B1MQ&hash=item2b95f48281:g:kDQAAOSwb41oGaeW&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1esueKElgazagIfpuohldo%2BRc4J%2Bgsogj6mPCkgQngYDThoPL1ojWIndZq9y4gHQyqb8GBJ39R44lWWHt0GPdWY0HNLmvgf%2BKJHwaCagRkMTmkWM6s9eeMCgM%2Feef86vUvmVz%2FDe0jffrXHEg8Y9NbyBiM7iIbnF57kd0E%2BNAwewDaN9NA5XiO6G06x1ur8jIXrPgP2hk4SViIcgGOh8JLqm74b0qnP1pg9rGAxpgU79g%3D%3D%7Ctkp%3ABk9SR5a678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n4 product ratings\n5\n4 users rated this 5 out of 5 stars\n4\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 4 reviews\nby bullmarket117770zor\nJun 11, 2024\nI really love my new Rolex Datejust. Paris from Pure Watch was amazing in helping me select my watch. I can't say enough goo...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "Waterproof Men Watch Stainless Steel Quartz Luminous Classic Business Wristwatch",
+            "brand": "Waterproof",
+            "feedback": 0,
+            "price": "US $13.99",
+            "url": "https://www.ebay.com/itm/167475223596?_skw=watches&itmmeta=01JTJ3VVK6N66X6P3CH4SDRMA8&hash=item26fe4d1c2c:g:ZdwAAeSwwzxoFlGe&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1cdf%2BuyGr4RvTv6twlF2Zf7mZzm6miidn36wVcnWVkKkaO58e7VKhvR%2FbyB7gds2%2BQGYY4RNuTMXeC6v3an49Iiy6IFeiW%2Fm7OTgKqgrrt9ZXB4AWMi3sDCWaV4MTOBadaTSVE6RdjQNzE12fjUxiVMVeDw09rQSjHeLaqhSYE%2FxWhgXgEXgF7ilzStMU%2BeCY1WPenJz3gkf0LoJRVrxcv21ID2vvCu%2BQWVZxMSJgrWAg%3D%3D%7Ctkp%3ABk9SR5i678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Vintage Rado Purple Horse Bright Royal Blue Dial Automatic Wrist Watch For Men's",
+            "brand": "Vintage",
+            "feedback": 0,
+            "price": "US $280.00",
+            "url": "https://www.ebay.com/itm/365568845072?_skw=watches&itmmeta=01JTJ3VVK6Y96XTH9AT3YW7CDK&hash=item551d99e510:g:1i8AAeSw6lln-6~m&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1eNWmUWZuupCBEfK%2B%2B2hCbLJ21h1HFLJ0zlkTPvCXZLc0m9Fvy%2BVqqM6mEdXNDwaqwj7ivRK7yAOKXd083GmWtR%2B83zYwh3FLfST0y4oFtsBRqBFPItPwF%2FOuUcnXeD8q%2FVpncVhgEqFpSo0lJMXCh6jxekMaPeMmrVyUI2Jc6If9H8ux2GlAGSZtGf3IZB45ms6cgozOaMWAKfSsR%2B2XL%2BIDyYvWfS45wJ0c96FjeLq3FVCpvoGLsberpaWDHoGuc4xhnmXjbtX0McKR8Y%2FFCQ%7Ctkp%3ABk9SR5i678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Citizen Men's Promaster Automatic Diver's Watch - NY0040-09E NEW",
+            "brand": "Citizen",
+            "feedback": 0,
+            "price": "US $189.00",
+            "url": "https://www.ebay.com/itm/393679436750?_skw=watches&epid=96853254&itmmeta=01JTJ3VVK62EXX0EWFS5RJESFK&hash=item5ba91f7bce:g:jtcAAOSwGwJhhW9M&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1cQDmlohSAJWw5y4X4SGoMAyyT3pDBkugn0sn0Orordx8NDyEzq582FXP4ONQd2bmIeNNhe7G9cbMiO6I9V%2BqbsGvWarw3CtAtof1t%2BEMRVn4duDXOaZx0sFraZM2VtIDawEuG68bYOi0HcAwoyKtgebxX7JHswf1vkfqkz0Ui9q1YITNmOsJQcsH9DTGxKM0py0zdCw4g0OXIHfbIFVpo%2FYwp8YHlZv7kVIK3d3HtiUbgZpXKwyB5sBOCS2djpOP0YeqpPZGVwADOExEl8IcUB%7Ctkp%3ABk9SR5i678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.8\n32 product ratings\n5\n28 users rated this 5 out of 5 stars\n28\n4\n2 users rated this 4 out of 5 stars\n2\n3\n0 users rated this 3 out of 5 stars\n0\n2\n2 users rated ...",
+                    "rating": 4.8,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 23 reviews\nby casacollins\nNov 28, 2021\nTOP FAVORABLE REVIEW\nGood automatic watch\nThis is a good-looking dive watch that promises water resistance to 200 meters (about 6 t...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "OMEGA CONSTELLATION PIE PAN 14K GOLD & STEEL AUTOMATIC REF 168.005 MEN'S WATCH",
+            "brand": "OMEGA",
+            "feedback": 0,
+            "price": "US $2,800.00",
+            "url": "https://www.ebay.com/itm/187198293899?_skw=watches&epid=17048411841&itmmeta=01JTJ3VVK6N2KQ5VP2AZENN1F9&hash=item2b95e3478b:g:y4EAAOSwSqZoC-fp&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1fnX9QxUIqnAlqLPy0BGDZVEVnDCD%2FuSnif%2BYRBm3%2BOBcX6FUsP7WRBfB2i93c2NwRWp8QuIOp%2BrQtk%2FBw5kOsjh%2Fg5FV%2FWoJrntzbEBpcRawwq9M2jKIqkqx4X3RzWuV%2Fn9tjR3sfrtzkRe7G7to7oUHLu5ka67Aq6CCu6Vx3RM%2Feg%2Bs1YBY0Yl8Tes59ABJA705OUo8Hxo%2B5ymUb%2BmYD9cV3bYXUeSh3jLvOhk8pdTdXt6jwz1THKk3znE0D7KGoYRDtyhy3rWtN1eGc0%2BuRw%7Ctkp%3ABk9SR5i678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n2 product ratings\n5\n2 users rated this 5 out of 5 stars\n2\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 2 reviews\nby crocket39\nMar 08, 2023\nAn elegant timepiece still relevant today\nIt is an elegant watch for its simplicity. We are all not scuba divers and need the monstrou...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "2025 OMEGA SPEEDMASTER MOONWATCH NEW WHITE DIAL 42MM WATCH 310.30.42.50.04.001",
+            "brand": "2025",
+            "feedback": 0,
+            "price": "US $7,799.90",
+            "url": "https://www.ebay.com/itm/335567341126?_skw=watches&epid=6067925722&itmmeta=01JTJ3VVK6FM9TNPE5FCCZW314&hash=item4e215f4646:g:WPQAAOSwl3Bmkblo&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1fH5zi6nZB2VwcFcdWzQHvZMg8rrnMq%2FIBOb64euEqkpDOH9zdeqWZxFCeCJf9yGUwLdZj2KmEqwzqD1eeQbbFbqfdyyhZNPVD0Ai7m5Ee0vXrfUj4RngSz2N7YYuk6B3NxU9dSaw0vdmezgbl4VCt9D3cd9f5fKUpL6Tcs4ZzcEqv0Qvjzq%2BqGWTC5CrcExRuDr%2BfVqOXq3yMeHGrf51r2SKiuk2tPRJvV2M%2FHCoWEzQ%3D%3D%7Ctkp%3ABk9SR5i678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n5.0\n1 product ratings\n5\n1 users rated this 5 out of 5 stars\n1\n4\n0 users rated this 4 out of 5 stars\n0\n3\n0 users rated this 3 out of 5 stars\n0\n2\n0 users rated thi...",
+                    "rating": 5.0,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 1 reviews\nby tropical1776\nApr 09, 2025\nWatch was brand new, stickers still on i...\nWatch was brand new, stickers still on it. Perfect.\nVerified purchase: YesCondition: Ne...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "Seiko 5 Five Sports SSK003 GMT Automatic Watch 100 Meter Blue Dial Made in Japan",
+            "brand": "Seiko",
+            "feedback": 0,
+            "price": "US $288.00",
+            "url": "https://www.ebay.com/itm/205405965557?_skw=watches&epid=12054582837&itmmeta=01JTJ3VVK6NHDG1FFH95K4761K&hash=item2fd3264cf5:g:MoMAAOSwj8JmmACG&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1eDq%2F4hHqF0vxPmQNx8WBPOsYHNy2s9uow88KpUQJkunj1WhK%2BmH9YXlYMD0%2BkwNicnj39bKI0Cjy0AOOCUsoU%2B6u1NHiqeUHDaugRjG%2FApO%2BzNu8ZcU7kIbHaS9Ue6AZ8DNWgQiedoNu%2FXuxKA9zd4wxTexzgoFgRENTvHzQohLv6pnYOxrPyoHdGnxJd7Wz8ekfuwhJmhLZv0v9mSuw1DiG6jVdiC3uikOk6RWWyugw%3D%3D%7Ctkp%3ABk9SR5i678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": [
+                {
+                    "text": "Product ratings and reviews\nLearn more\n4.9\n38 product ratings\n5\n35 users rated this 5 out of 5 stars\n35\n4\n2 users rated this 4 out of 5 stars\n2\n3\n1 users rated this 3 out of 5 stars\n1\n2\n0 users rated ...",
+                    "rating": 4.9,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Product ratings and reviews\nLearn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Learn more",
+                    "rating": null,
+                    "sentiment": "positive"
+                },
+                {
+                    "text": "Most relevant reviews\nSee all 38 reviews\nby ralston2050\nAug 26, 2024\nTOP FAVORABLE REVIEW\nBest value automatic watch from a legacy company\nGreat watch. Fraction the price of the big name Swiss watch c...",
+                    "rating": null,
+                    "sentiment": "positive"
+                }
+            ]
+        },
+        {
+            "title": "Men’s moissanite VVS1 ICED OUT WATCH BRAND NEW(PASSES DIAMOND TESTER)",
+            "brand": "Men’s",
+            "feedback": 0,
+            "price": "US $269.00/ea",
+            "url": "https://www.ebay.com/itm/405825578797?_skw=watches&itmmeta=01JTJ3VVK6G8NJF84XD8M50JJZ&hash=item5e7d16e72d:g:f3oAAeSwES1oEu0f&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1dm01o%2BTI3807xROdQKo%2B6Cjl1tpldIFsaH5eN3hXRDcPNqVO%2FwV7dULx74Y9mIn002FLBaRHsTP17wB95qDbo6BbGh2jghURiflnsIHA19EwXD3zKUsltq%2B5UigbCT09GRFzoWieTOWcH4kl2TwZRYx38kDnKSaD5JSX67NRFoWM5r09opxekVibbReIWcLeIAeZycdoLzLWMOpTKjW%2FEi%2FLQI3dbM9mRuUq2xRY38KotZqxSWWoNUMyrfSuJvNHYxCuw9TAecgdJ2YORuCLjv%7Ctkp%3ABFBMmLrvw9Rl",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Men Women New Shinola Runwell White Dial With Brown Leather Strap Watch 41mm",
+            "brand": "Men",
+            "feedback": 0,
+            "price": "US $240.05/ea",
+            "url": "https://www.ebay.com/itm/296395929867?_skw=watches&itmmeta=01JTJ3VVK6GEQZNJ42M95PN031&hash=item450292f90b:g:yu4AAOSwbbFmLcmc&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1fGnomeDJBJ2JeGUoJMuNek9ReeOQjCeIvWG0tLeNEhTHzZeype2w5ZwRbjvKhIffG4wSISiPwMFaBStu0dXWOfddnO8dhLrffoXOae%2FUisWeMosKjt%2BbweGly6FHiEFmHSW7ypHAq%2B4LHhwRrrwKT6qHYDQDmGlDcTG3Hnr5NY0QATfadvlZWMNb7UkohP3DEG8V8GtmapCwuXB194Phczk0vALIZeM9n%2FgTqMfQmFDsVkLgVTsrFrv5wbUDLu5OJcQ%2BHU2y4RVW1dwhskAZQs%7Ctkp%3ABFBMmLrvw9Rl",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Men's Army Military Luminous 24 Hours Dial Nylon Strap Date Quartz Wrist Watch",
+            "brand": "Men's",
+            "feedback": 0,
+            "price": "US $10.99/ea",
+            "url": "https://www.ebay.com/itm/185301145489?_skw=watches&itmmeta=01JTJ3VVK60NMC5DXT3D29S9PG&hash=item2b24cf1791:g:CVQAAOSwZmViD0On&itmprp=enc%3AAQAKAAAA4FkggFvd1GGDu0w3yXCmi1e3z9krnCrGeFmDKdQiMKoYfoH5DZTGUeYoGdSvJjKBnQzBWp%2B6UYGxbY%2F%2Bx7z3tEuk8IElVLrjp8fKQiN1TLx492fSsf3y%2FDgMP7asMFCESXxGpesqf5RPypd%2B0Z8DbJsRnDZ%2BRGtB30GBiq%2BGcYKgcgg%2BhPcSTNEtKZHQRMC5q%2FZYKxnDwiPZdUabDdRy9qxQLbhzF5BpuEUI2zhJySplCiTchvnp0pWyJSe1%2Be3sb7JbVJJ00rkT%2BvSajaW1TkWXjJaKsDssZnkyRX%2FHNy0A%7Ctkp%3ABFBMmLrvw9Rl",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Bulova Marine Star Chronograph Stainless Steel Quartz Men's Watch 98B423",
+            "brand": "Bulova",
+            "feedback": 0,
+            "price": "US $135.00/ea",
+            "url": "https://www.ebay.com/itm/396124103030?_skw=watches&epid=14068638173&itmmeta=01JTJ3VVK6HVHEJXMANV5787V2&hash=item5c3ad62176:g:uWsAAOSwELJmqBtt&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1cVe8j4%2B6XZ8j822kA0sXpIa1xx6cga%2BMcIN1vBujShR%2BhskCv06yhC4qyCfVZATbDDEK6trUzkUC0te2LFY%2FC8ROYyGVgyyP9tekRiDIp4Sww0Zy2n4tKrM15hqcQrKuXNZVGeohYKIzYs0pYW%2FWc2lGwQeVGt9uoCCbd4LegvRV4sFTvlnQFPwJ4ZeTjGpQVuLtezo39Ri9OhHWcYgOfA1CSNwT3fR4d2wbX2jRj0vg%3D%3D%7Ctkp%3ABk9SR5i678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        },
+        {
+            "title": "Vintage Seiko Automatic Green Sunburst Dial (Changed) Watch for Men's Japan",
+            "brand": "Vintage",
+            "feedback": 0,
+            "price": "US $114.99",
+            "url": "https://www.ebay.com/itm/365555084425?_skw=watches&itmmeta=01JTJ3VVK6374NWXV5DSPFNBS2&hash=item551cc7ec89:g:EukAAeSw6rVn~ZEe&itmprp=enc%3AAQAKAAAAwFkggFvd1GGDu0w3yXCmi1dEq96L7YMUkqKOtvL3cJEG4oIw0e6FWXgySsyE8RXYTytcznoph%2FsiHKmi11qZR%2BKChtnFpMsKuDPiTmlntopieGpKSGyo%2BhWD--xZ9cy%2F7%2BhaDSXk1k8fP2T1UGa79DDY2XBKey5TmDyomx31H%2F2yCEaC5gOCgywHtALST3uDOP0cREyL65dRhA9qApMv7TYglfsK3kwZYMiwEJiF09O4c%2ByomMs4hJsGZxknhfzJZQ%3D%3D%7Ctkp%3ABk9SR5i678PUZQ",
+            "rating": null,
+            "rating_count": 0,
+            "reviews": []
+        }
+    ]
+}
