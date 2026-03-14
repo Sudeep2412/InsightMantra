@@ -340,17 +340,27 @@ def save_reviews_to_database(reviews, product_url):
         reviews: List of review dictionaries
         product_url: URL of the product being reviewed
     """
-    from backend.models import EbayReview
+    from backend.models import EbayReview, EbayProduct
     from backend import db, app
 
     with app.app_context():
         try:
             print(f"Saving {len(reviews)} reviews to the database...")
             
-            # Extract product ID from URL (this is an example, adjust based on eBay URL structure)
-            product_id = product_url.split('/')[-1].split('?')[0]
-            if not product_id:
-                product_id = "unknown"
+            # Find the actual product in the database by URL
+            product = EbayProduct.query.filter_by(url=product_url).first()
+            if not product:
+                # If product doesn't exist, try matching just the item ID from URL
+                item_id_match = re.search(r'/itm/(\d+)', product_url)
+                if item_id_match:
+                    item_id = item_id_match.group(1)
+                    product = EbayProduct.query.filter(EbayProduct.url.like(f'%/itm/{item_id}%')).first()
+                    
+            if not product:
+                print(f"Error: Product with URL {product_url} not found in database. Cannot save reviews. Please use the search scraper first.")
+                return
+                
+            product_id = product.id
             
             # Save each review to database
             for review in reviews:

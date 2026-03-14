@@ -169,61 +169,80 @@ def analysis_page():
 @app.route('/api/analysis/<analysis_type>', methods=['GET'])
 @login_required
 def fetch_analysis(analysis_type):
-    conn = sqlite3.connect('/mnt/c/Users/sudee/OneDrive/Desktop/InsightMantra-master/database/sales_forecasting.db')
+    import os
+    basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    db_path = os.path.join(basedir, 'database', 'sales_forecasting.db')
+    conn = sqlite3.connect(db_path)
     try:
+        # Get the latest search term to filter data for the current product
+        cursor = conn.cursor()
+        cursor.execute("SELECT search_term FROM search ORDER BY created_at DESC LIMIT 1")
+        latest_term_row = cursor.fetchone()
+        latest_term = latest_term_row[0] if latest_term_row else ""
+
         if analysis_type == "brand_market_share":
-            query = """
-                SELECT brand, SUM(product_count) AS total_products,
-                       ROUND(SUM(market_share), 2) AS market_share
+            query = f"""
+                SELECT brand, ROUND(SUM(market_share), 2) AS market_share
                 FROM Analysis
+                WHERE search_term = '{latest_term}'
                 GROUP BY brand
                 ORDER BY market_share DESC
             """
-            chart_title = "Market Share by Brand"
+            chart_title = f"Market Share by Brand ({latest_term})"
+            
         elif analysis_type == "product_sales":
-            query = """
-                SELECT ProductName, SUM(UnitsSold) AS total_units_sold
-                FROM SalesData
-                JOIN Products ON SalesData.ProductID = Products.ProductID
-                GROUP BY ProductName
-                ORDER BY total_units_sold DESC
-            """
-            chart_title = "Product-wise Sales Performance"
-        elif analysis_type == "search_popularity":
-            query = """
-                SELECT search_term, COUNT(*) AS search_count
+            # Repurposed to show Product Feedback Count (since eBay doesn't provide exact sales volume publicly here)
+            query = f"""
+                SELECT substr(title, 1, 30) AS short_title, seller_feedback 
                 FROM search
-                GROUP BY search_term
-                ORDER BY search_count DESC
+                WHERE search_term = '{latest_term}'
+                ORDER BY seller_feedback DESC
+                LIMIT 10
             """
-            chart_title = "Search Popularity Trends"
+            chart_title = f"Top Seller Feedback for ({latest_term})"
+            
+        elif analysis_type == "search_popularity":
+            # Repurposed to show Rating Counts across different products in the search
+            query = f"""
+                SELECT substr(title, 1, 30) AS short_title, rating_count
+                FROM search
+                WHERE search_term = '{latest_term}'
+                ORDER BY rating_count DESC
+                LIMIT 10
+            """
+            chart_title = f"Product Rating Volumes ({latest_term})"
+            
         elif analysis_type == "review_sentiment":
-            query = """
+            # Filter reviews by the latest scraped product's ID
+            query = f"""
                 SELECT sentiment, COUNT(*) AS count
                 FROM reviews
+                WHERE product_id IN (SELECT id FROM search WHERE search_term = '{latest_term}')
                 GROUP BY sentiment
             """
-            chart_title = "Review Sentiment Analysis"
+            chart_title = f"Review Sentiment Analysis ({latest_term})"
+            
         elif analysis_type == "price_vs_rating":
-            query = '''
-                SELECT 
-                    Products.Category, 
-                    AVG(Products.Price) AS avg_price, 
-                    AVG(Products.rating) AS avg_rating
-                FROM 
-                    Products
-                JOIN 
-                    search ON Products.ProductID = search.id
-                GROUP BY 
-                    Products.Category
-            '''
-            chart_title = "Price vs Rating by Category or Brand"
+            # Query the actual eBay products table instead of legacy `Products`
+            query = f"""
+                SELECT brand, AVG(rating) AS avg_rating
+                FROM search
+                WHERE search_term = '{latest_term}' AND rating > 0 AND brand IS NOT NULL
+                GROUP BY brand
+            """
+            chart_title = f"Average Rating by Brand ({latest_term})"
+            
         else:
             return jsonify({"error": "Invalid analysis type"}), 400
 
         df = pd.read_sql_query(query, conn)
-        labels = df.iloc[:, 0].tolist()  # First column as labels
-        values = df.iloc[:, 1].tolist()  # Second column as values
+        
+        # If the dataframe is empty (e.g., scrape failed or captcha blocked it), return empty lists
+        if df.empty:
+            return jsonify({"labels": ["No Data"], "values": [0], "chartTitle": chart_title + " - No Data Found"})
+
+        labels = df.iloc[:, 0].astype(str).tolist()  # First column as labels
+        values = df.iloc[:, 1].fillna(0).tolist()  # Second column as values
         return jsonify({"labels": labels, "values": values, "chartTitle": chart_title})
     finally:
         conn.close()

@@ -5,6 +5,8 @@ from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationE
 from backend.models import User
 
 class Regfrom(FlaskForm):
+    class Meta:
+        csrf = False
     name = StringField('Name', validators=[Length(min=3, max=30), DataRequired()])
     email_address = StringField('Email Address', validators=[Email(), DataRequired()])
     password1 = PasswordField('Password', validators=[Length(min=6), DataRequired()])
@@ -19,6 +21,8 @@ class Regfrom(FlaskForm):
 
 
 class LogForm(FlaskForm):
+    class Meta:
+        csrf = False
     productUrl = StringField('Enter the Product Url', validators=[DataRequired()])
     productName = StringField('Enter the Product Name', validators=[DataRequired()])
     email_address = StringField('Email Address', validators=[Email(), DataRequired()])

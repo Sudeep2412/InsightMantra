@@ -47,10 +47,9 @@ def amazon_url(product_url):
         options.add_argument("--headless")  # Optional
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-        
-        service = Service("/usr/bin/chromedriver")  # Using the path from your system
-
-        driver = webdriver.Chrome(service=service, options=options)
+        # Initialize Chrome WebDriver
+        # Selenium 4.6+ will automatically handle the driver via Selenium Manager
+        driver = webdriver.Chrome(options=options)
         
         reviews = []
 

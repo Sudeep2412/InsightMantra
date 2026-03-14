@@ -39,9 +39,13 @@ from flask_login import LoginManager
 
 
 
+import os
+
+basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////mnt/c/Users/sudee/OneDrive/Desktop/InsightMantra-master/database/sales_forecasting.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'database', 'sales_forecasting.db')
 app.config['WTF_CSRF_ENABLED'] = False
 
 db = SQLAlchemy(app)
@@ -82,8 +86,8 @@ def insert_csv_to_table(file_path, table_name):
         print(f"Inserting into table: {table_name}")
         print("CSV columns:", df.columns.tolist())
 
-        # Use absolute path to the correct database
-        db_path = '/mnt/c/Users/sudee/OneDrive/Desktop/InsightMantra-master/database/sales_forecasting.db'
+        # Use dynamic path to the correct database
+        db_path = os.path.join(basedir, 'database', 'sales_forecasting.db')
         print("Using DB file at:", db_path)
 
         # Insert using pandas

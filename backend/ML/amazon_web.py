@@ -14,9 +14,8 @@ def amazon_prod(name):
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
 
-        # Initialize Chrome WebDriver (make sure chromedriver is in your PATH)
-        service = Service("/usr/bin/chromedriver")  # Update this path if needed
-        driver = webdriver.Chrome(service=service, options=options)
+        # Initialize Chrome WebDriver (Selenium 4.6+ auto-manages drivers)
+        driver = webdriver.Chrome(options=options)
 
         # URL
         amazon_search_url = f"https://www.amazon.in/s?k={'+'.join(product_name.split())}"
@@ -96,4 +95,5 @@ def amazon_prod(name):
 
 
 # Example usage
-amazon_prod("Phones")
+if __name__ == "__main__":
+    amazon_prod("Phones")
