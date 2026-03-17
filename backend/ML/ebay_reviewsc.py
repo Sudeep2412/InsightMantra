@@ -22,7 +22,7 @@ from backend.models import EbayReview  # Import the EbayReview model
 from backend import app
 
 
-def get_ebay_reviews(product_url, min_reviews=50, max_pages=10):
+def get_ebay_reviews(product_url, search_term='Unknown Ebay Product', min_reviews=50, max_pages=10):
     """
     Extract reviews from an eBay product page and save them to the database.
     
@@ -319,7 +319,7 @@ def get_ebay_reviews(product_url, min_reviews=50, max_pages=10):
                 reviews_with_sentiment.append(review)
         
         # Store reviews in the database
-        save_reviews_to_database(reviews_with_sentiment, product_url)
+        save_reviews_to_database(reviews_with_sentiment, product_url, search_term)
         
     except Exception as e:
         print(f"Error during sentiment analysis: {str(e)}")
@@ -328,11 +328,11 @@ def get_ebay_reviews(product_url, min_reviews=50, max_pages=10):
         for review in reviews:
             review["sentiment"] = "neutral"
             review["sentiment_score"] = 0
-        save_reviews_to_database(reviews, product_url)
+        save_reviews_to_database(reviews, product_url, search_term)
     
     return reviews
 
-def save_reviews_to_database(reviews, product_url):
+def save_reviews_to_database(reviews, product_url, search_term='Unknown Ebay Product'):
     """
     Save the extracted reviews to the database
     
@@ -357,9 +357,23 @@ def save_reviews_to_database(reviews, product_url):
                     product = EbayProduct.query.filter(EbayProduct.url.like(f'%/itm/{item_id}%')).first()
                     
             if not product:
-                print(f"Error: Product with URL {product_url} not found in database. Cannot save reviews. Please use the search scraper first.")
-                return
-                
+                # If still not found, try to find a product by the search term passed in (fallback)
+                product = EbayProduct.query.filter_by(search_term=search_term).first()
+                if not product:
+                    print(f"Warning: No matching product found for URL {product_url} or search term {search_term}. Creating a dummy product to save reviews.")
+                    product = EbayProduct(
+                        title=f"Manual Add: {search_term}",
+                        brand="Unknown",
+                        price="0.0",
+                        url=product_url,
+                        rating=0.0,
+                        rating_count=0,
+                        seller_feedback=0,
+                        search_term=search_term
+                    )
+                    db.session.add(product)
+                    db.session.flush() # get the ID
+                    
             product_id = product.id
             
             # Save each review to database

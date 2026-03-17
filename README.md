@@ -1,238 +1,131 @@
-# InsightMantra
+# InsightMantra 🛡️
 
-## Description
-InsightMantra is a comprehensive project encompassing multiple facets including a frontend built with React, a backend with Flask, machine learning algorithms, and data visualization. The project aims to provide insights through data visualization and machine learning models.
+**InsightMantra** is an advanced market intelligence and sentiment analysis platform. It leverages state-of-the-art machine learning models and automated web scraping to provide real-time insights into product performance, brand market share, and customer sentiment across major e-commerce platforms like eBay and Amazon.
 
-## Table of Contents
-1. [Frontend Project](#frontend-project)
-    - [Description](#frontend-description)
-    - [Installation](#frontend-installation)
-    - [Usage](#frontend-usage)
-    - [Project Structure](#frontend-project-structure)
-    - [Available Scripts](#frontend-available-scripts)
-    - [Configuration](#frontend-configuration)
-    - [Contributing](#frontend-contributing)
-    - [Credits](#frontend-credits)
-2. [Backend Project](#backend-project)
-    - [Description](#backend-description)
-    - [Installation](#backend-installation)
-    - [Usage](#backend-usage)
-    - [Endpoints](#backend-endpoints)
-    - [Configuration](#backend-configuration)
-    - [Running Tests](#backend-running-tests)
-    - [Contributing](#backend-contributing)
-3. [Amazon Reviews Scraper](#amazon-reviews-scraper)
-    - [Description](#amazon-reviews-scraper-description)
-    - [Requirements](#amazon-reviews-scraper-requirements)
-    - [Usage](#amazon-reviews-scraper-usage)
-4. [Demand Forecasting](#demand-forecasting)
-    - [Description](#demand-forecasting-description)
-    - [Requirements](#demand-forecasting-requirements)
-    - [Usage](#demand-forecasting-usage)
-5. [Web Scraping](#web-scraping)
-    - [Description](#web-scraping-description)
-    - [Requirements](#web-scraping-requirements)
-    - [Installation](#web-scraping-installation)
-6. [Visualization Branch](#visualization-branch)
-    - [Description](#visualization-branch-description)
-    - [Requirements](#visualization-branch-requirements)
-    - [Installation](#visualization-branch-installation)
-    - [Usage](#visualization-branch-usage)
-    - [Contributing](#visualization-branch-contributing)
-7. [Acknowledgments](#acknowledgments)
-8. [License](#license)
+---
 
-## Frontend Project
+## 🚀 Key Features
 
-### Description
-This is a frontend project built with HTML, CSS, JavaScript, React, Chart.js, and Tailwind CSS. The project visualizes data using interactive charts and provides a responsive user interface.
+- **Automated Multi-Platform Scraping**: Intelligent drivers for eBay and Amazon that handle dynamic content, pagination, and anti-bot measures.
+- **Sentiment Analysis Deep Dive**: Uses **RoBERTa-based** transformer models for high-accuracy sentiment classification (Positive, Neutral, Negative) of customer reviews.
+- **Market Share Visualization**: Real-time calculation of brand presence and popularity based on search results and product volumes.
+- **Interactive Dashboards**: A modern, responsive UI built with React and Tailwind CSS, featuring interactive charts powered by Chart.js.
+- **User Authentication**: Secure JWT-based authentication system with Flask-Login and Bcrypt.
+- **Unified Backend API**: A robust Flask REST API that bridges the gap between raw data collection and frontend visualization.
 
-### Installation
+---
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/your-repo-name.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd your-repo-name
-    ```
-3. Install the dependencies:
-    ```sh
-    npm install
-    ```
+## 🛠️ Technology Stack
 
-### Usage
+### Frontend
+- **Framework**: [React.js](https://reactjs.org/) (Vite)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Charts**: [Chart.js](https://www.chartjs.org/)
+- **State Management**: React Hooks & Context API
 
-1. Start the development server:
-    ```sh
-    npm run dev
-    ```
-    The application will run on http://localhost:3000.
+### Backend
+- **Framework**: [Flask](https://flask.palletsprojects.com/)
+- **Database**: [SQLite](https://www.sqlite.org/) with [SQLAlchemy ORM](https://www.sqlalchemy.org/)
+- **Authentication**: Flask-Login, Flask-Bcrypt
+- **Concurrency**: Threading for parallel scraping tasks
 
-### Project Structure
+### Machine Learning & Data Science
+- **Scraping**: [Selenium WebDriver](https://www.selenium.dev/), [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/)
+- **NLP Models**: [HuggingFace Transformers](https://huggingface.co/docs/transformers/index) (`cardiffnlp/twitter-roberta-base-sentiment`), [TextBlob](https://textblob.readthedocs.io/)
+- **Data Analysis**: [Pandas](https://pandas.pydata.org/), [NumPy](https://numpy.org/)
+- **Forecasting**: Facebook [Prophet](https://facebook.github.io/prophet/) (for demand prediction)
 
-your-repo-name/
-├── public/
-│ ├── index.html
-│ └── ...
-├── src/
-│ ├── components/
-│ │ ├── Hero.jsx (Landing Page)
-│ │ └── ...
-│ ├── styles/
-│ │ ├── tailwind.css
-│ │ └── ...
-│ ├── App.js
-│ ├── index.js
-│ └── ...
-├── .gitignore
-├── package.json
-├── tailwind.config.js
-└── README.md
+---
 
+## 📂 Project Structure
 
-### Available Scripts
-
-- `npm start`: Runs the app in development mode. Open http://localhost:3000 to view it in the browser.
-- `npm run build`: Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-
-### Configuration
-
-Configuration for Tailwind CSS is managed in the `tailwind.config.js` file. You can customize the Tailwind CSS configuration to suit your needs.
-
-Example Configuration:
-```javascript
-module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-}
+```text
+InsightMantra/
+├── backend/                # Flask Backend Application
+│   ├── ML/                 # Machine Learning & Scraping Logic
+│   │   ├── amazon_sc.py    # Amazon Scraper
+│   │   ├── ebay_searchsc.py # eBay Product Search & Analysis
+│   │   ├── ebay_reviewsc.py # eBay Review Scraping & Sentiment
+│   │   └── ...
+│   ├── models.py           # SQLAlchemy Database Models
+│   ├── routes.py           # REST API Endpoints & Page Routing
+│   ├── forms.py            # Flask-WTF Form Definitions
+│   └── ...
+├── frontend/               # React Frontend (Vite)
+│   ├── src/
+│   │   ├── components/     # UI Components (Hero, Benefits, Charts)
+│   │   ├── assets/         # Static assets and SVGs
+│   │   └── App.jsx         # Main Application Entry
+│   └── ...
+├── database/               # SQLite database files
+├── app.py                  # Backend Entry Point
+└── package.json            # Frontend Dependencies & Scripts
 ```
-### Contributing
-Contributions are welcome! Please follow these steps to contribute:
 
-* Fork the repository.
-* Create a new branch (git checkout -b feature-branch).
-* Make your changes.
-* Commit your changes (git commit -m 'Add some feature').
-* Push to the branch (git push origin feature-branch).
-* Open a pull request.
-### Credits
-This project was inspired by and uses code from the Brainwave repository by Adrian Hajdin for Frontend only.
+---
 
-### Backend Project
-#### Description
-This is a Flask backend project designed to handle the Insight Mantra Backend. The project provides a RESTful API.
+## 🔧 Installation & Setup
 
-### Installation
-Clone the repository:
-sh
-Copy code
-git clone https://github.com/yourusername/your-repo-name.git
-Navigate to the project directory:
-sh
-Copy code
-cd your-repo-name
-Create a virtual environment:
-sh
-Copy code
-python -m venv venv
-### Activate the virtual environment:
-### On Windows:
-sh
-Copy code
-venv\Scripts\activate
-### On macOS/Linux:
-sh
-Copy code
-source venv/bin/activate
-Install the dependencies:
-sh
-Copy code
-pip install -r requirements.txt
-Usage
-Set up environment variables:
+### Prerequisites
+- Python 3.8+
+- Node.js & npm
+- Chrome WebDriver (Automated via Selenium for 4.6+)
 
-Create a .env file in the root directory.
-Add necessary environment variables as shown in the .env.example file.
-### Run the Flask application:
+### 1. Backend Setup
+1. Navigate to the root directory and create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+2. Install Python dependencies:
+   ```bash
+   pip install -r backend/requirements.txt
+   ```
+3. Initialize the database:
+   ```python
+   # Run in python console
+   from backend import app, db
+   with app.app_context():
+       db.create_all()
+   ```
+4. Start the Flask server:
+   ```bash
+   python app.py
+   ```
 
-sh
-Copy code
-flask run
-By default, the application will run on http://127.0.0.1:5000.
+### 2. Frontend Setup
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-### Configuration
-Configuration is managed using environment variables. You can set these variables in a .env file or export them in your shell.
+---
 
-* Example Configuration:
+## 📊 Machine Learning Pipeline
 
-sh
-Copy code
-FLASK_APP=app.py
-FLASK_ENV=development
-DATABASE_URI=sqlite:///your-database.db
-SECRET_KEY=your_secret_key
+### 1. Data Collection
+The scraping engine uses Selenium with a headless Chrome driver. It identifies product listings, extracts pricing, seller feedback, and ratings. For deep analysis, it navigates into individual product pages to find "See all reviews" and scrapes paginated review data.
 
-### Running Tests
-To run tests, use the following command:
+### 2. Sentiment Analysis
+Collected reviews are cleaned and truncated to 512 tokens (compatible with BERT-based models). We use the `cardiffnlp/twitter-roberta-base-sentiment` model to classify sentiment. The scores are then aggregated to provide a "Market Sentiment Score" for specific search categories.
 
-sh
-Copy code
-pytest
-Ensure you have installed the test dependencies listed in requirements.txt.
+### 3. Market Share Analysis
+By analyzing the top search results for a term (e.g., "PS5 Pro"), the system calculates brand density and average ratings across the first 20-50 listings, providing a snapshot of current market dominance.
 
+---
 
-### Amazon Reviews Scraper
-#### Description
-This project uses Selenium and BeautifulSoup to scrape reviews from an Amazon product page. The script extracts a specified number of reviews and saves them to a CSV file.
+## 📜 License
+This project is licensed under the MIT License - see the `License.txt` file for details.
 
-### Requirements
-Python 3.7+
-selenium
-beautifulsoup4
-pandas
-Microsoft Edge WebDriver
-Usage
-Replace the placeholder path to the Edge WebDriver executable with the actual path on your system:
-
-### python
-Copy code
-edge_driver_path = 'C:/msedgedriver.exe'  # Replace with the actual path
-The script will scrape the reviews and save them to a CSV file named amazon_reviews.csv.
-
-### Amazon Reviews Sentiment Analysis
-Description
-This project uses Transformer models to analyze the sentiment of Amazon product reviews. The script processes the reviews, performs sentiment analysis, and saves the results to a JSON file for plotting.
-
-### Requirements
-Python 3.7+
-torch
-transformers
-pandas
-tqdm
-numpy
-matplotlib
-re
-json
-### Usage
-Place your dataset in the specified directory with the filename amazon_reviews.csv:
-python
-Copy code
-DATA_DIR = "/home/aman/code/ML/demand_prd/REFACTORED/DATA/amazon_reviews.csv"
-The script will preprocess the data, perform sentiment analysis, and save the results to a JSON file named plotting_data.json.
-### Demand Forecasting
-#### Description
-This project uses the Prophet model for time series forecasting to predict future sales. The dataset consists of weekly sales data, which is preprocessed and used to train the model. The forecasted results are saved in a JSON file for further analysis.
-
-### Requirements
-Python
-
-
+## 🙏 Acknowledgments
+- Inspired by modern UI patterns like the Brainwave project.
+- Sentiment analysis models provided by Cardiff NLP via HuggingFace.
+- Scraper logic optimized for e-commerce search refinement.

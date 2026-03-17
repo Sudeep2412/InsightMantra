@@ -1,6 +1,5 @@
-
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, SelectField
 from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError
 from backend.models import User
 
@@ -18,13 +17,20 @@ class Regfrom(FlaskForm):
         if email_address:
             raise ValidationError('Email Address already exists! Please try a different email address')
 
-
-
 class LogForm(FlaskForm):
     class Meta:
         csrf = False
     productUrl = StringField('Enter the Product Url', validators=[DataRequired()])
     productName = StringField('Enter the Product Name', validators=[DataRequired()])
+    dataSource = SelectField('Data Source', choices=[
+        ('ebay', 'eBay'), 
+        ('snapdeal', 'Snapdeal'),
+        ('shopclues', 'ShopClues'),
+        ('indiamart', 'IndiaMART'),
+        ('meesho', 'Meesho'),
+        ('slickdeals', 'Slickdeals'),
+        ('nykaa', 'Nykaa (Beauty)')
+    ], validators=[DataRequired()])
     email_address = StringField('Email Address', validators=[Email(), DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Log in')

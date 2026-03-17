@@ -3,8 +3,6 @@ from flask import render_template, redirect, url_for, flash, request, jsonify, m
 from backend.models import Data, User
 from backend.forms import Regfrom, LogForm 
 from flask_login import login_user, logout_user, login_required, current_user
-from backend.ML.amazon_sc import amazon_url
-from backend.ML.amazon_web import amazon_prod
 import threading
 from .ML.ebay_searchsc import ebay_product_search
 from .ML.ebay_reviewsc import get_ebay_reviews
@@ -47,24 +45,71 @@ def process_product():
         # Get form data
         product_url = session.pop('product_url', None)
         product_type = session.pop('product_name', None)
+        data_source = session.pop('data_source', 'ebay')
         
         # Validate form inputs
         if not product_url or not product_type:
             flash("Both Product URL and Product Type are required!", "danger")
             return redirect(url_for('dashboard_page'))
         
-        # Define functions to trigger the eBay scrapers
+        # Define functions to trigger the appropriate scrapers based on data_source
         def run_url_scraper():
-            try:
-                ebay_product_search(product_name=product_type)
-            except Exception as e:
-                print(f"[ERROR] run_url_scraper failed: {e}")
+            with app.app_context():
+                try:
+                    if data_source == 'ebay':
+                        from .ML.ebay_searchsc import ebay_product_search
+                        ebay_product_search(product_name=product_type)
+                    elif data_source == 'snapdeal':
+                        from .ML.snapdeal_searchsc import snapdeal_product_search
+                        snapdeal_product_search(product_name=product_type)
+                    elif data_source == 'shopclues':
+                        from .ML.shopclues_searchsc import shopclues_product_search
+                        shopclues_product_search(product_name=product_type)
+                    elif data_source == 'indiamart':
+                        from .ML.indiamart_searchsc import indiamart_product_search
+                        indiamart_product_search(product_name=product_type)
+                    elif data_source == 'meesho':
+                        from .ML.meesho_searchsc import meesho_product_search
+                        meesho_product_search(product_name=product_type)
+                    elif data_source == 'nykaa':
+                        from .ML.nykaa_searchsc import nykaa_product_search
+                        nykaa_product_search(product_name=product_type)
+                    elif data_source == 'slickdeals':
+                        from .ML.slickdeals_searchsc import slickdeals_product_search
+                        slickdeals_product_search(product_name=product_type)
+                    else:
+                        print(f"URL scraper not implemented yet for source: {data_source}")
+                except Exception as e:
+                    print(f"Error in run_url_scraper: {e}")
 
         def run_type_scraper():
-            try:
-                get_ebay_reviews(product_url=product_url)
-            except Exception as e:
-                print(f"[ERROR] run_type_scraper failed: {e}")
+            with app.app_context():
+                try:
+                    if data_source == 'ebay':
+                        from .ML.ebay_reviewsc import get_ebay_reviews
+                        get_ebay_reviews(product_url=product_url, search_term=product_type)
+                    elif data_source == 'snapdeal':
+                        from .ML.snapdeal_reviewsc import get_snapdeal_reviews
+                        get_snapdeal_reviews(product_url=product_url, search_term=product_type)
+                    elif data_source == 'shopclues':
+                        from .ML.shopclues_reviewsc import get_shopclues_reviews
+                        get_shopclues_reviews(product_url=product_url, search_term=product_type)
+                    elif data_source == 'indiamart':
+                        from .ML.indiamart_reviewsc import get_indiamart_reviews
+                        get_indiamart_reviews(product_url=product_url, search_term=product_type)
+                    elif data_source == 'meesho':
+                        from .ML.meesho_reviewsc import get_meesho_reviews
+                        get_meesho_reviews(product_url=product_url, search_term=product_type)
+                    elif data_source == 'nykaa':
+                        from .ML.nykaa_reviewsc import get_nykaa_reviews
+                        get_nykaa_reviews(product_url=product_url, search_term=product_type)
+                    elif data_source == 'slickdeals':
+                        from .ML.slickdeals_reviewsc import get_slickdeals_reviews
+                        get_slickdeals_reviews(product_url=product_url, search_term=product_type)
+                    else:
+                        print(f"Review scraper not implemented yet for source: {data_source}")
+                except Exception as e:
+                    print(f"Error in run_type_scraper: {e}")
 
         
         # Run the scrapers in parallel using threads
@@ -92,6 +137,7 @@ def login_page():
             # ✅ Store the product details in session
             session['product_url'] = form.productUrl.data
             session['product_name'] = form.productName.data
+            session['data_source'] = form.dataSource.data
 
             # ✅ Trigger the scraping in the next route
             return redirect(url_for('process_product'))
@@ -248,32 +294,93 @@ def fetch_analysis(analysis_type):
         conn.close()
 
 
-# @app.route('/upload', methods=['POST'])
-# def upload_file():
-#     if 'file' not in request.files:
-#         flash('No file part')
-#         return redirect(request.url)
-    
-#     file = request.files['file']
-    
-#     if file.filename == '':
-#         flash('No selected file')
-#         return redirect(request.url)
-    
-#     if file and allowed_file(file.filename):
-#         filename = secure_filename(file.filename)
-#         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-#         file.save(filepath)
-        
-#         # Process the CSV file
-#         data = pd.read_csv(filepath)
-#         # You can do further processing with the 'data' DataFrame
-        
-#         flash('File successfully uploaded and processed')
-#         return redirect(url_for('index'))
-#     else:
-#         flash('Allowed file types are csv')
-#         return redirect(request.url)
+import os
+from werkzeug.utils import secure_filename
+import json
 
-# def allowed_file(filename):
-#     return '.' in filename and filename.rsplit('.', 1)[1].lower() == 'csv'
+app.config['UPLOAD_FOLDER'] = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'uploads')
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ['csv', 'json']
+
+@app.route('/api/upload_data', methods=['POST'])
+@login_required
+def upload_data():
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part"}), 400
+    
+    file = request.files['file']
+    
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+    
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        
+        # Validate and parse the file
+        try:
+            if filename.endswith('.csv'):
+                data = pd.read_csv(filepath)
+                records = data.to_dict(orient='records')
+            elif filename.endswith('.json'):
+                with open(filepath, 'r') as f:
+                    records = json.load(f)
+                    
+            # Here we would typically save 'records' to the database.
+            return jsonify({
+                "message": "File successfully uploaded and processed", 
+                "records_processed": len(records),
+                "filename": filename
+            }), 200
+            
+        except Exception as e:
+            return jsonify({"error": f"Error processing file: {str(e)}"}), 500
+            
+    else:
+        return jsonify({"error": "Allowed file types are csv, json"}), 400
+
+from backend.ML.predictive_pipeline import SalesPredictor
+
+predictor = SalesPredictor()
+
+@app.route('/api/forecast', methods=['GET', 'POST'])
+@login_required
+def get_forecast():
+    # Attempt to train if not trained
+    if not predictor.is_trained:
+        try:
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], 'synthetic_sales_data.csv')
+            if os.path.exists(filepath):
+                df = pd.read_csv(filepath)
+                predictor.train(df)
+            else:
+                from backend.ML.synthetic_data_gen import generate_synthetic_sales_data
+                df = generate_synthetic_sales_data(days=365)
+                predictor.train(df)
+        except Exception as e:
+            print(f"Error training model: {e}")
+            
+    # Use recent data to predict
+    try:
+        from backend.ML.synthetic_data_gen import generate_synthetic_sales_data
+        recent_data = generate_synthetic_sales_data(days=40)
+        
+        forecast = predictor.predict(recent_data, days=30)
+        
+        # Calculate KPIs
+        projected_demand = sum(forecast['predictions'])
+        
+        return jsonify({
+            "forecast": forecast,
+            "kpis": {
+                "projected_30_day_demand": projected_demand,
+                "sentiment_correlation": "+12.4%", # Mocked metric
+                "competitor_price_index": "98.5", # Mocked metric
+                "stockout_risk_days": 18 # Mocked metric
+            }
+        })
+    except Exception as e:
+        return jsonify({"error": f"Internal Error: {str(e)}"}), 500
