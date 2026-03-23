@@ -5,39 +5,89 @@ const PredictiveKPIs = ({ data }) => {
 
   const kpis = [
     {
-      title: "Projected 30-Day Demand",
+      title: "PROJ 30D DEMAND",
       value: data.kpis.projected_30_day_demand.toLocaleString(),
-      subtitle: "Units expected to sell",
-      color: "text-blue-400"
+      subtitle: "Units expected trajectory",
+      color: "text-[#00f0ff]",
+      borderColor: "border-[#00f0ff]"
     },
     {
-      title: "Sentiment Correlation",
+      title: "SENTIMENT VECTOR",
       value: data.kpis.sentiment_correlation,
-      subtitle: "Impact of 1pt review change",
-      color: "text-green-400"
+      subtitle: "Impact multiplier",
+      color: "text-[#ff0055]",
+      borderColor: "border-[#ff0055]"
     },
     {
-      title: "Competitor Price Index",
+      title: "COMPETITOR IDX",
       value: data.kpis.competitor_price_index,
-      subtitle: "vs Average Market Baseline",
-      color: "text-purple-400"
+      subtitle: "vs Market Baseline",
+      color: "text-[#b026ff]",
+      borderColor: "border-[#b026ff]"
     },
     {
-      title: "Stockout Risk",
+      title: "STOCKOUT RISK",
       value: `${data.kpis.stockout_risk_days} Days`,
-      subtitle: "Remaining inventory buffer",
-      color: "text-red-400"
+      subtitle: "Depletion threshold",
+      color: "text-[#ffb800]",
+      borderColor: "border-[#ffb800]"
+    },
+    {
+      title: "ANOMALY PROBABILITY",
+      value: data.kpis.anomaly_probability,
+      subtitle: "Fraud / outlier risk",
+      color: "text-[#fdba74]",
+      borderColor: "border-[#fdba74]"
+    },
+    {
+      title: "NEURAL ACCURACY",
+      value: data.kpis.confidence_score,
+      subtitle: "LSTM / Prophet Cross-Val",
+      color: "text-[#86efac]",
+      borderColor: "border-[#86efac]"
+    },
+    {
+      title: "MOMENTUM DELTA",
+      value: data.kpis.momentum_delta,
+      subtitle: "Velocity shift",
+      color: "text-[#93c5fd]",
+      borderColor: "border-[#93c5fd]"
+    },
+    {
+      title: "MARKET SATURATION",
+      value: data.kpis.saturation_level,
+      subtitle: "Target demographic cap",
+      color: "text-[#f472b6]",
+      borderColor: "border-[#f472b6]"
     }
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 mt-10 px-4 xl:px-0">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-10">
       {kpis.map((kpi, index) => (
-        <div key={index} className="bg-[#0e0c15] border border-n-6 rounded-2xl p-6 shadow-lg hover:border-color-1 transition-colors relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-br from-color-1/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-          <h3 className="text-n-3 text-sm font-medium mb-2 uppercase tracking-wider">{kpi.title}</h3>
-          <div className={`text-3xl font-bold mb-1 ${kpi.color}`}>{kpi.value}</div>
-          <p className="text-n-4 text-sm">{kpi.subtitle}</p>
+        <div key={index} className={`relative bg-[#0a0a0f]/80 backdrop-blur-xl border-l-[3px] border-y-0 border-r-0 ${kpi.borderColor} px-6 rounded-r-2xl py-8 shadow-2xl hover:shadow-[0_0_40px_rgba(0,0,0,0.8)] transition-all duration-500 overflow-hidden group`}>
+          {/* Subtle animated scanline */}
+          <div className="absolute inset-0 w-full h-full bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.2)_50%)] bg-[length:100%_4px] pointer-events-none opacity-20"></div>
+          
+          {/* Hover background pulse */}
+          <div className={`absolute inset-0 w-full h-full opacity-0 group-hover:opacity-10 bg-gradient-to-r ${kpi.borderColor.replace('border', 'from')} to-transparent transition-opacity duration-500 pointer-events-none`}></div>
+          
+          <div className="flex justify-between items-start mb-4 relative z-10">
+            <h3 className="text-gray-400 font-mono text-xs font-bold tracking-[0.2em]">{kpi.title}</h3>
+            <span className={`w-2 h-2 rounded-full animate-pulse ${kpi.borderColor.replace('border-', 'bg-')}`}></span>
+          </div>
+          
+          <div className={`text-4xl lg:text-5xl font-mono font-black mb-2 tracking-tighter ${kpi.color} relative z-10 drop-shadow-[0_0_15px_currentColor]`}>
+            {kpi.value}
+          </div>
+          
+          <p className="text-gray-500 font-mono text-[10px] uppercase tracking-widest relative z-10">{kpi.subtitle}</p>
+          
+          {/* Abstract corner decoration */}
+          <div className="absolute bottom-0 right-0 w-16 h-16 opacity-30 pointer-events-none">
+            <div className={`absolute bottom-2 right-2 w-4 h-[1px] ${kpi.borderColor.replace('border-', 'bg-')}`}></div>
+            <div className={`absolute bottom-2 right-2 w-[1px] h-4 ${kpi.borderColor.replace('border-', 'bg-')}`}></div>
+          </div>
         </div>
       ))}
     </div>

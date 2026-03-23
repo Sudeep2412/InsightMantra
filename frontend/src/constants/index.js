@@ -37,8 +37,10 @@ import {
 } from "../assets";
 
 export const navigation = [
- 
-  
+  { id: "0", title: "Home", url: "/" },
+  { id: "1", title: "Dashboard", url: "/dashboard" },
+  { id: "2", title: "Intercept", url: "/intercept" },
+  { id: "3", title: "Data Fusion", url: "/data-fusion" }
 ];
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];

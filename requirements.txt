@@ -11,4 +11,14 @@ scikit-learn
 matplotlib
 seaborn
 plotly
--e .
+flask-bcrypt
+flask-cors
+selenium
+torch
+transformers
+nltk
+tqdm
+textblob
+webdriver-manager
+huggingface_hub
+prophet

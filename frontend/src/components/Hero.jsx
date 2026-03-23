@@ -8,6 +8,8 @@ import { useRef } from "react";
 import Generating from "./Generating";
 import CompanyLogos from "./CompanyLogos";
 
+import { Link } from 'react-router-dom';
+
 const Hero = () => {
   const parallaxRef = useRef(null);
 
@@ -24,7 +26,7 @@ const Hero = () => {
         <h1 className="h1 mb-8 text-6xl md:text-7xl lg:text-8xl">
   <span className="inline-block whitespace-nowrap ml-[-2rem] md:ml-[-3rem] lg:ml-[-4rem]">Explore the Possibilities</span> &nbsp;In&nbsp;Demand {` `}
   <span className="inline-block relative" style={{ marginTop: '1rem' }}>
-    Forcasting {" "}
+    Forecasting {" "}
     <img
       src={curve}
       className="absolute top-full left-0 w-full xl:-mt-2"
@@ -34,21 +36,22 @@ const Hero = () => {
     />
   </span>
 </h1>
-          <p className="body-1 max-w-3xl mx-auto mt-4 mb-6 text-n-2 lg:mt-6 lg:mb-8">
-  Forcast Demand Manufacture
+          <p className="body-1 max-w-3xl mx-auto mt-4 mb-6 text-n-2 lg:mt-6 lg:mb-8 font-light tracking-wide">
+  Predict Future Demand with AI-Powered Insights
 </p>
 
-<Button 
-  className="mt-4 lg:mt-6 text-lg lg:text-xl px-6 lg:px-8 py-3 lg:py-4 bg-cyan-500 hover:bg-transparent transition duration-300 relative border-0 rounded-lg overflow-hidden"
+<Link 
+  className="inline-flex items-center justify-center mt-4 lg:mt-6 text-lg lg:text-xl px-8 lg:px-10 py-4 lg:py-5 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 relative border-0 shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
   style={{
-    borderRadius: '30px 50px 0 0',
+    borderRadius: '12px',
+    color: '#ffffff',
+    fontWeight: 'bold',
+    letterSpacing: '0.05em'
   }}
-  href="http://127.0.0.1:2000/login"
+  to="/login"
 >
-  <span className="text-black hover:text-white transition duration-300">
-    Get Started Today
-  </span>
-</Button>
+  GET STARTED TODAY
+</Link>
         </div>
         <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
           

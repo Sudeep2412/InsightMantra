@@ -17,7 +17,7 @@ class Regfrom(FlaskForm):
         if email_address:
             raise ValidationError('Email Address already exists! Please try a different email address')
 
-class LogForm(FlaskForm):
+class DataInputForm(FlaskForm):
     class Meta:
         csrf = False
     productUrl = StringField('Enter the Product Url', validators=[DataRequired()])
@@ -31,6 +31,11 @@ class LogForm(FlaskForm):
         ('slickdeals', 'Slickdeals'),
         ('nykaa', 'Nykaa (Beauty)')
     ], validators=[DataRequired()])
+    submit = SubmitField('Initialize Data Intercept')
+
+class LogForm(FlaskForm):
+    class Meta:
+        csrf = False
     email_address = StringField('Email Address', validators=[Email(), DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Log in')
