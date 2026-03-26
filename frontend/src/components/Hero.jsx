@@ -1,77 +1,60 @@
-import { curve, heroBackground, robot } from "../assets";
-import Button from "./Button";
-import Section from "./Section";
-import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
-import { heroIcons } from "../constants";
-import { ScrollParallax } from "react-just-parallax";
-import { useRef } from "react";
-import Generating from "./Generating";
-import CompanyLogos from "./CompanyLogos";
-
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  const parallaxRef = useRef(null);
-
   return (
-    <Section
-      className="pt-[12rem] -mt-[5.25rem]"
-      crosses
-      crossesOffset="lg:translate-y-[5.25rem]"
-      customPaddings
-      id="hero"
-    >
-      <div className="container relative" ref={parallaxRef}>
-        <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
-        <h1 className="h1 mb-8 text-6xl md:text-7xl lg:text-8xl">
-  <span className="inline-block whitespace-nowrap ml-[-2rem] md:ml-[-3rem] lg:ml-[-4rem]">Explore the Possibilities</span> &nbsp;In&nbsp;Demand {` `}
-  <span className="inline-block relative" style={{ marginTop: '1rem' }}>
-    Forecasting {" "}
-    <img
-      src={curve}
-      className="absolute top-full left-0 w-full xl:-mt-2"
-      width={624}
-      height={28}
-      alt="Curve"
-    />
-  </span>
-</h1>
-          <p className="body-1 max-w-3xl mx-auto mt-4 mb-6 text-n-2 lg:mt-6 lg:mb-8 font-light tracking-wide">
-  Predict Future Demand with AI-Powered Insights
-</p>
+    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-orange-50"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-100/40 rounded-full blur-3xl"></div>
+      </div>
 
-<Link 
-  className="inline-flex items-center justify-center mt-4 lg:mt-6 text-lg lg:text-xl px-8 lg:px-10 py-4 lg:py-5 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 relative border-0 shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)]"
-  style={{
-    borderRadius: '12px',
-    color: '#ffffff',
-    fontWeight: 'bold',
-    letterSpacing: '0.05em'
-  }}
-  to="/login"
->
-  GET STARTED TODAY
-</Link>
-        </div>
-        <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
-          
-          <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
-            <img
-              src={heroBackground}
-              className="w-full"
-              width={1440}
-              height={1800}
-              alt="hero"
-            />
-          </div>
-
-          <BackgroundCircles />
+      <div className="container text-center relative z-10">
+        <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-surface-200 shadow-card mb-8">
+          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          <span className="text-sm font-medium text-surface-600">AI-Powered E-Commerce Analytics</span>
         </div>
 
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-surface-900 leading-[1.1] mb-6 tracking-tight">
+          Smarter Pricing.<br/>
+          <span className="bg-gradient-to-r from-brand-500 via-orange-500 to-amber-500 bg-clip-text text-transparent">Better Decisions.</span>
+        </h1>
+
+        <p className="text-lg md:text-xl text-surface-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Compare prices across platforms, analyze customer reviews, and forecast demand — all powered by AI.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to="/login"
+            className="px-8 py-3.5 bg-surface-900 text-white font-semibold rounded-xl hover:bg-surface-800 transition-all shadow-lg hover:shadow-xl text-base"
+          >
+            Get Started Free
+          </Link>
+          <Link
+            to="/dashboard"
+            className="px-8 py-3.5 bg-white text-surface-700 font-semibold rounded-xl border border-surface-200 hover:border-surface-300 hover:bg-surface-50 transition-all shadow-card text-base"
+          >
+            View Dashboard →
+          </Link>
         </div>
 
-      <BottomLine />
-    </Section>
+        {/* Stats row */}
+        <div className="mt-16 flex flex-wrap justify-center gap-8 lg:gap-16">
+          {[
+            { value: "7+", label: "E-commerce Platforms" },
+            { value: "AI", label: "Demand Forecasting" },
+            { value: "Real-time", label: "Price Tracking" },
+          ].map((stat, i) => (
+            <div key={i} className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-surface-900">{stat.value}</div>
+              <div className="text-sm text-surface-400 mt-1">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
