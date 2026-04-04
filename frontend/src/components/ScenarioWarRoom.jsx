@@ -26,26 +26,48 @@ const ScenarioWarRoom = ({ onSimulate, isSimulating }) => {
     onSimulate(1.0, 1.0);
   };
 
-  const graphData = useMemo(() => {
+  const [graphData, setGraphData] = useState({
+      nodes: [
+        { id: 'Price', group: 1, val: 10, color: '#b026ff' },
+        { id: 'Sentiment', group: 2, val: 10, color: '#ffb800' },
+        { id: 'Demand', group: 3, val: 15, color: '#00ff88' },
+        { id: 'Stockout', group: 4, val: 12, color: '#00f0ff' },
+        { id: 'Margin', group: 5, val: 12, color: '#f472b6' }
+      ],
+      links: [
+        { source: 'Price', target: 'Demand', value: 1 },
+        { source: 'Sentiment', target: 'Demand', value: 1 },
+        { source: 'Demand', target: 'Stockout', value: 3 },
+        { source: 'Demand', target: 'Margin', value: 2 },
+        { source: 'Price', target: 'Margin', value: 3 }
+      ]
+  });
+
+  useEffect(() => {
     const demandScale = Math.max(0.5, 2.0 - priceShock + (sentimentShock - 1.0));
     const stockScale = 1.0 / demandScale;
 
-    return {
-      nodes: [
-        { id: 'Price', group: 1, val: priceShock * 10, color: '#b026ff' },
-        { id: 'Sentiment', group: 2, val: sentimentShock * 10, color: '#ffb800' },
-        { id: 'Demand', group: 3, val: demandScale * 15, color: '#00ff88' },
-        { id: 'Stockout', group: 4, val: stockScale * 12, color: stockScale < 0.8 ? '#ff0055' : '#00f0ff' },
-        { id: 'Margin', group: 5, val: priceShock * demandScale * 12, color: '#f472b6' }
-      ],
-      links: [
-        { source: 'Price', target: 'Demand', value: Math.abs(1 - priceShock) * 5 + 1 },
-        { source: 'Sentiment', target: 'Demand', value: Math.abs(1 - sentimentShock) * 5 + 1 },
-        { source: 'Demand', target: 'Stockout', value: demandScale * 3 },
-        { source: 'Demand', target: 'Margin', value: demandScale * 2 },
-        { source: 'Price', target: 'Margin', value: priceShock * 3 }
-      ]
-    };
+    // Mutate existing nodes and links to preserve physics coordinates
+    const nodes = graphData.nodes;
+    const links = graphData.links;
+
+    nodes.find(n => n.id === 'Price').val = priceShock * 10;
+    nodes.find(n => n.id === 'Sentiment').val = sentimentShock * 10;
+    nodes.find(n => n.id === 'Demand').val = demandScale * 15;
+    
+    const stockNode = nodes.find(n => n.id === 'Stockout');
+    stockNode.val = stockScale * 12;
+    stockNode.color = stockScale < 0.8 ? '#ff0055' : '#00f0ff';
+    
+    nodes.find(n => n.id === 'Margin').val = priceShock * demandScale * 12;
+
+    links[0].value = Math.abs(1 - priceShock) * 5 + 1;
+    links[1].value = Math.abs(1 - sentimentShock) * 5 + 1;
+    links[2].value = demandScale * 3;
+    links[3].value = demandScale * 2;
+    links[4].value = priceShock * 3;
+
+    setGraphData({ nodes, links });
   }, [priceShock, sentimentShock]);
 
   return (

@@ -74,8 +74,8 @@ const SearchCommandCenter = () => {
   };
 
   const handleScrape = async () => {
-    if (!productName) {
-      setStatus('Target keyword is strictly required for interception.');
+    if (!productName || productName.trim().length < 3) {
+      setStatus('Error: Target keyword must be at least 3 valid characters for precise interception.');
       return;
     }
 
@@ -103,6 +103,9 @@ const SearchCommandCenter = () => {
               window.location.reload();
             }, 2000);
         }, 22000);
+      } else if (res.status === 401) {
+        setStatus(`⚠ Session Expired: Please login again before launching intercept.`);
+        setTimeout(() => navigate('/login'), 2000);
       } else {
         setStatus(`Error: ${data.error}`);
       }

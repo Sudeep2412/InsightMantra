@@ -268,18 +268,8 @@ def get_ebay_reviews(product_url, search_term='Unknown Ebay Product', min_review
         for i, review in enumerate(reviews[:3]):
             print(f"Review {i+1}: {review['body'][:100]}... (Date: {review['date']})")
     else:
-        print("No reviews were extracted!")
-        
-        # If no reviews were found, return some dummy data for testing
-        if len(reviews) == 0:
-            print("Generating some sample data for testing purposes")
-            dummy_reviews = [
-                {'body': 'This is a sample review for testing. The product seems good.', 'date': 'March 1, 2023'},
-                {'body': 'Another sample review. This product could be better.', 'date': 'February 15, 2023'},
-                {'body': 'Third sample review. I like this product a lot.', 'date': 'January 10, 2023'}
-            ]
-            print("Created sample data for testing the analysis functions")
-            reviews = dummy_reviews
+        print("No reviews were extracted! Exiting gracefully without fake data.")
+        return []
     
     # Analyze sentiment for each review
     try:

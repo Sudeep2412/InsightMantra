@@ -438,9 +438,37 @@ def ebay_product_search(product_name, max_products=20, get_reviews=True, save_to
             print(f"\nProcessing product {i+1}/{len(product_urls)}: {url}")
             # Process each product by URL to avoid stale element issues
             product_data = extract_product_data(driver, url)
-            if product_data:
+            if product_data and product_data['title'] != "Unknown":
+                # POST-SCRAPE FILTERING ALGORITHM (PSFA)
+                title_lower = product_data['title'].lower()
+                term_lower = product_name.lower().strip()
+                
+                # Edge Case 1: Accessory Detection
+                # Scrapers usually grab "iPhone 15 Case" when searching "iPhone 15". This blocks accessories unless explicitly searched.
+                accessories = ["case", "cover", "screen protector", "charger", "cable", "box only", "repair", "bumper", "silicone"]
+                is_accessory_query = any(acc in term_lower for acc in accessories)
+                is_accessory_product = any(acc in title_lower for acc in accessories)
+                
+                if not is_accessory_query and is_accessory_product:
+                    print(f"[PSFA] Rejected (Detected as Accessory/Part): {product_data['title'][:50]}...")
+                    continue
+                    
+                # Edge Case 2: Exact Token Matching
+                # If I search "pro 256", both "pro" and "256" MUST be explicitly in the title.
+                search_tokens = term_lower.split()
+                missing_token = False
+                for token in search_tokens:
+                    if token not in title_lower:
+                        missing_token = True
+                        break
+                        
+                if missing_token:
+                    print(f"[PSFA] Rejected (Missing Required Keywords): {product_data['title'][:50]}...")
+                    continue
+
+                # Passed all Post-Scrape Filters!
                 product_details.append(product_data)
-                print(f"Successfully processed product: {product_data['title'][:50]}...")
+                print(f"[PSFA] Accepted: {product_data['title'][:50]}...")
         
         if not product_details:
             print("No product details were successfully extracted.")

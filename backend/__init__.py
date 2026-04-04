@@ -53,6 +53,15 @@ bcrypt = Bcrypt(app)
 loginManager = LoginManager(app)
 CORS(app, supports_credentials=True, origins=["http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5173", "http://127.0.0.1:5174"])  # Enable CORS
 
+# Fix: Return JSON 401 for API routes instead of HTML redirect
+@loginManager.unauthorized_handler
+def unauthorized_api():
+    if request.path.startswith('/api/'):
+        return jsonify({"error": "Session expired or not logged in. Please login again."}), 401
+    from flask import redirect, url_for, flash
+    flash("Please log in to access this page.", "danger")
+    return redirect(url_for('login_page'))
+
 
 
 @app.route('/upload_csv', methods=['POST'])

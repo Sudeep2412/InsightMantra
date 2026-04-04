@@ -25,7 +25,21 @@ ChartJS.register(
 
 const ForecastChart = ({ data }) => {
   const chartRef = useRef(null);
+  const scrollRef = useRef(null);
   const [chartData, setChartData] = useState(null);
+
+  useEffect(() => {
+    if (chartData && scrollRef.current) {
+      setTimeout(() => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollTo({
+            left: scrollRef.current.scrollWidth,
+            behavior: 'smooth'
+          });
+        }
+      }, 500);
+    }
+  }, [chartData]);
 
   useEffect(() => {
     if (data && data.forecast) {
@@ -151,8 +165,13 @@ const ForecastChart = ({ data }) => {
     <div className="w-full relative group">
       {/* Glow Effect */}
       <div className="absolute -inset-1 bg-gradient-to-r from-[#00f0ff]/20 to-[#ff0055]/20 rounded-[1.5rem] blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-      <div className="relative w-full h-[450px] p-6 bg-[#0a0a0f] rounded-2xl border border-[#00f0ff]/30 shadow-[0_0_50px_rgba(0,240,255,0.1)]">
-        <Line ref={chartRef} options={options} data={chartData} />
+      <div 
+        ref={scrollRef}
+        className="relative w-full h-[450px] p-6 bg-[#0a0a0f] rounded-2xl border border-[#00f0ff]/30 shadow-[0_0_50px_rgba(0,240,255,0.1)] overflow-x-auto scroll-smooth custom-scrollbar"
+      >
+        <div className="min-w-[1000px] h-full" style={{ height: 'calc(100% - 10px)' }}>
+          <Line ref={chartRef} options={options} data={chartData} />
+        </div>
       </div>
       
       {/* Corner UI Elements */}

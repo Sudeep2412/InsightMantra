@@ -228,8 +228,8 @@ def api_scrape():
         product_url = data.get('product_url')
         sources = data.get('sources', ['ebay'])
         
-        if not product_type:
-            return jsonify({"error": "product_name is required"}), 400
+        if not product_type or len(product_type.strip()) < 3:
+            return jsonify({"error": "Product name is required and must be at least 3 characters to prevent broad inaccurate scraping."}), 400
 
         # Define high-level worker function
         def run_scrapers_for_source(src):
@@ -262,69 +262,48 @@ def api_scrape():
                 except Exception as e:
                     print(f"Error in {src} Search Scraper: {e}")
 
-                # 2. Review Scraper (only if URL provided but we can attempt search term fallback)
-                if product_url:
+                # 2. Review Scraper — Auto-detect URL if user didn't provide one
+                review_url = product_url
+                if not review_url:
+                    # Auto-pick the first product URL from the just-scraped results
+                    try:
+                        from backend.models import EbayProduct
+                        first_product = EbayProduct.query.filter_by(search_term=product_type).order_by(EbayProduct.created_at.desc()).first()
+                        if first_product and first_product.url:
+                            review_url = first_product.url
+                            print(f"[Auto-URL] No URL provided. Using first scraped product: {review_url[:80]}...")
+                    except Exception as e:
+                        print(f"[Auto-URL] Could not auto-detect product URL: {e}")
+
+                if review_url:
                     try:
                         if src == 'ebay':
                             from .ML.ebay_reviewsc import get_ebay_reviews
-                            get_ebay_reviews(product_url=product_url, search_term=product_type)
+                            get_ebay_reviews(product_url=review_url, search_term=product_type)
                         elif src == 'snapdeal':
                             from .ML.snapdeal_reviewsc import get_snapdeal_reviews
-                            get_snapdeal_reviews(product_url=product_url, search_term=product_type)
+                            get_snapdeal_reviews(product_url=review_url, search_term=product_type)
                         elif src == 'shopclues':
                             from .ML.shopclues_reviewsc import get_shopclues_reviews
-                            get_shopclues_reviews(product_url=product_url, search_term=product_type)
+                            get_shopclues_reviews(product_url=review_url, search_term=product_type)
                         elif src == 'indiamart':
                             from .ML.indiamart_reviewsc import get_indiamart_reviews
-                            get_indiamart_reviews(product_url=product_url, search_term=product_type)
+                            get_indiamart_reviews(product_url=review_url, search_term=product_type)
                         elif src == 'meesho':
                             from .ML.meesho_reviewsc import get_meesho_reviews
-                            get_meesho_reviews(product_url=product_url, search_term=product_type)
+                            get_meesho_reviews(product_url=review_url, search_term=product_type)
                         elif src == 'nykaa':
                             from .ML.nykaa_reviewsc import get_nykaa_reviews
-                            get_nykaa_reviews(product_url=product_url, search_term=product_type)
+                            get_nykaa_reviews(product_url=review_url, search_term=product_type)
                         elif src == 'slickdeals':
                             from .ML.slickdeals_reviewsc import get_slickdeals_reviews
-                            get_slickdeals_reviews(product_url=product_url, search_term=product_type)
+                            get_slickdeals_reviews(product_url=review_url, search_term=product_type)
                     except Exception as e:
                         print(f"Error in {src} Review Scraper: {e}")
+                else:
+                    print(f"[Review Scraper] Skipped: No product URL available for {src}")
                 
-                # Neural Fallback Generator (If Selenium blocked by Captchas, populate SQL natively)
-                try:
-                    from backend.models import EbayProduct, db
-                    from backend.ML.synthetic_data_gen import generate_synthetic_sales_data
-                    
-                    # Generate 15 fake product results to make the scrape seem instantly successful
-                    import random
-                    from datetime import datetime
-                    brands = ['TechGiant', 'InnoGear', 'PulseOptics', 'NovaDynamics']
-                    
-                    for i in range(15):
-                        mock_search = EbayProduct(
-                            title=f"Advanced {product_type} {random.randint(100, 999)}",
-                            price=f"${random.randint(49, 999)}.99",
-                            search_term=product_type,
-                            rating=round(random.uniform(3.5, 5.0), 1),
-                            rating_count=random.randint(20, 5000),
-                            brand=random.choice(brands),
-                            seller_feedback=random.randint(50, 15000),
-                            created_at=datetime.utcnow()
-                        )
-                        db.session.add(mock_search)
-                        
-                    # Add dummy market analysis entries
-                    for brand in brands:
-                        conn = sqlite3.connect('database/sales_forecasting.db')
-                        c = conn.cursor()
-                        c.execute("INSERT INTO Analysis (search_term, brand, market_share, average_rating) VALUES (?, ?, ?, ?)",
-                                  (product_type, brand, random.uniform(10.0, 30.0), random.uniform(4.0, 5.0)))
-                        conn.commit()
-                        conn.close()
-                        
-                    db.session.commit()
-                    print(f"Fallback Neural Synthesis completed successfully for: {product_type}")
-                except Exception as fallback_e:
-                    print(f"Fallback generation error: {fallback_e}")
+                # Production Note: No fake data injection.
         
         # Dispatch multiple threads for massive parallelism
         active_threads = []
@@ -354,12 +333,74 @@ import pandas as pd
 
 @app.route('/api/reviews')
 def get_all_reviews():
-    from backend.models import EbayReview
-    reviews = EbayReview.query.all()
-    return jsonify([
-        {'id': r.id, 'body': r.body, 'date': r.date, 'sentiment': r.sentiment}
-        for r in reviews
-    ])
+    from backend.models import EbayReview, EbayProduct
+    import re
+    
+    # Use the search term from the frontend (active_intercept_term from localStorage)
+    # This ensures each product search gets its own reviews
+    latest_term = request.args.get('term', '').strip()
+    
+    # If no term provided by frontend, try to get from DB as fallback
+    if not latest_term:
+        import sqlite3, os
+        try:
+            basedir = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+            db_path = os.path.join(basedir, 'database', 'sales_forecasting.db')
+            conn = sqlite3.connect(db_path)
+            cursor = conn.cursor()
+            cursor.execute("SELECT search_term FROM search ORDER BY created_at DESC LIMIT 1")
+            row = cursor.fetchone()
+            if row:
+                latest_term = row[0]
+            conn.close()
+        except:
+            pass
+    
+    # Filter reviews: STRICTLY show reviews for products matching the search term
+    reviews = []
+    if latest_term:
+        product_ids = [p.id for p in EbayProduct.query.filter_by(search_term=latest_term).all()]
+        if product_ids:
+            reviews = EbayReview.query.filter(EbayReview.product_id.in_(product_ids)).all()
+    
+    result = []
+    for r in reviews:
+        text = r.body if r.body else ""
+        is_fake = False
+        sentiment_lower = (r.sentiment or "").lower()
+        
+        # Heuristic 1: Extremely short reviews with strong sentiment (often bots)
+        if len(text) < 15 and sentiment_lower in ["positive", "negative"]:
+            is_fake = True
+        # Heuristic 2: Spammy repetitive characters (e.g. woooow, greaaaat)
+        elif re.search(r'(.)\1{4,}', text):
+            is_fake = True
+        # Heuristic 3: All caps aggressiveness (spam)
+        elif len(text) > 25 and text.isupper():
+            is_fake = True
+        # Heuristic 4: Scraper junk / boilerplate (not real reviews)
+        elif any(junk in text.lower() for junk in [
+            'be the first to review', 'no recommendations yet', 
+            'would you like to recommend', 'ratings & reviews',
+            'select an issue', 'was this information helpful',
+            'customer images', 'thank you for submitting'
+        ]):
+            is_fake = True
+        # Heuristic 5: Suspiciously short content (< 10 chars, likely just a name or gibberish)
+        elif len(text.strip()) < 10:
+            is_fake = True
+        # Heuristic 6: Duplicate generic positive spam patterns
+        elif re.search(r'^(good|nice|ok|great|best|worst|bad|love it|hate it)[.!]*$', text.strip().lower()):
+            is_fake = True
+            
+        result.append({
+            'id': r.id, 
+            'body': text, 
+            'date': r.date, 
+            'sentiment': r.sentiment,
+            'is_fake': is_fake
+        })
+    return jsonify(result)
 
 
 @app.route('/logout')

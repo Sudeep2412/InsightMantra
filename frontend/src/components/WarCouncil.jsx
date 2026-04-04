@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 const WarCouncil = ({ data }) => {
   const [messages, setMessages] = useState([]);
   const [typing, setTyping] = useState(false);
-  const scrollRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     if (!data || !data.kpis) return;
@@ -42,7 +42,12 @@ const WarCouncil = ({ data }) => {
       if (step < script.length) {
         setMessages(prev => [...prev, script[step]]);
         step++;
-        if (scrollRef.current) scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+        if (containerRef.current) {
+          containerRef.current.scrollTo({
+            top: containerRef.current.scrollHeight,
+            behavior: 'smooth'
+          });
+        }
       } else {
         setTyping(false);
         clearInterval(timer);
@@ -68,7 +73,7 @@ const WarCouncil = ({ data }) => {
         </span>
       </div>
 
-      <div className="flex flex-col space-y-4 h-[250px] overflow-y-auto pr-2" style={{maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)'}}>
+      <div ref={containerRef} className="flex flex-col space-y-4 h-[250px] overflow-y-auto pr-2" style={{maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)'}}>
         <div className="pt-4"></div>
         {messages.map((msg, i) => (
           <div key={i} className="flex flex-col animate-[fadeIn_0.5s_ease-out]">
@@ -92,7 +97,7 @@ const WarCouncil = ({ data }) => {
             </div>
           </div>
         )}
-        <div ref={scrollRef} className="pb-4"></div>
+        <div className="pb-4"></div>
       </div>
     </div>
   );
